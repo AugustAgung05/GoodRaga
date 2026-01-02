@@ -117,63 +117,63 @@ function updateCartBadge() {
             category: "Tips Sehat",
             title: "Mengenal \"Ibu Kunyit\" vs Kunyit Biasa",
             desc: "Apa bedanya, dan kenapa kami memilih biang kunyit untukmu.",
-            image: "../src/assets/tips-sehat-1.svg"
+            image: "./src/assets/tips-sehat-1.svg"
         },
         {
             id: 2,
             category: "Tips Sehat",
             title: "Olahraga Saat PMS: Bolehkah?",
             desc: "Gerakan ringan yang justru membantu meredakan kram perut.",
-            image: "../src/assets/tips-sehat-2.svg"
+            image: "./src/assets/tips-sehat-2.svg"
         },
         {
             id: 3,
             category: "Tips Sehat",
             title: "Masuk Angin Karena AC Kantor? Ini Triknya.",
             desc: "Jangan biarkan suhu dingin menurunkan performa kerjamu.",
-            image: "../src/assets/tips-sehat-3.svg"
+            image: "./src/assets/tips-sehat-3.svg"
         },
         {
             id: 4,
             category: "Gaya Hidup",
             title: "Revenge Bedtime Procrastination",
             desc: "Kenapa kita sengaja menunda tidur padahal badan sudah lelah? Fenomena ini lebih umum dari yang kamu kira.",
-            image: "../src/assets/gaya-hidup-1.svg"
+            image: "./src/assets/gaya-hidup-1.svg"
         },
         {
             id: 5,
             category: "Produktivitas",
             title: "Teknik \"Micro-Break\" untuk Atasi Brain Fog Sore Hari",
             desc: "Produktivitas bukan soal kerja nonstop. Pelajari cara 'reset' otak dalam 5 menit agar performa tetap stabil sampai jam pulang.",
-            image: "../src/assets/produktivitas-2.svg"
+            image: "./src/assets/produktivitas-2.svg"
         },
         {
             id: 6,
             category: "Resep",
             title: "DIY Mocktail: Kunyit Asam Sparkle",
             desc: "Minuman segar ala café yang bisa kamu buat di rumah—cukup botol GoodRaga dan soda dingin.",
-            image: "../src/assets/resep-1.svg"
+            image: "./src/assets/resep-1.svg"
         },
         {
             id: 7,
             category: "Tips Sehat",
             title: "Mitos Gula Aren vs Gula Pasir",
             desc: "Benarkah gula aren lebih sehat untuk diabetes? Cek faktanya di sini.",
-            image: "../src/assets/tips-sehat-4.svg"
+            image: "./src/assets/tips-sehat-4.svg"
         },
         {
             id: 8,
             category: "Resep",
             title: "Warm Hug: Wedang Jahe Susu Oat",
             desc: "Resep hangat, creamy, dan dairy-free untuk menemani sore hujan tanpa rasa bersalah.",
-            image: "../src/assets/resep-2.svg"
+            image: "./src/assets/resep-2.svg"
         },
         {
             id: 9,
             category: "Produktivitas",
             title: "Ritual 10 Menit Pagi Biar Fokus Seharian",
             desc: "Bukan scroll HP. Mulai hari dengan kebiasaan kecil yang memberi 'win' pertama.",
-            image: "../src/assets/produktivitas-1.svg"
+            image: "./src/assets/produktivitas-1.svg"
         }
     ];
 
