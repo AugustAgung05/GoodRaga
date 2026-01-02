@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./src/assets/goodraga-logo.svg" type="image/svg+xml" />
+
+        <title>GoodRaga - Sehat Nggak Harus Pahit</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@700&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"
+        />
+
+        <link rel="stylesheet" href="./src/css/output.css" />
+    </head>
+    <body class="bg-bg text-black font-inter antialiased">
+
+        <header
+            id="header"
+            class="fixed top-0 w-full z-50 transition-all duration-300"
+        >
+            <div
+                class="max-w-7xl mx-auto px-5 md:px-7 py-5 lg:py-3 flex items-center justify-between"
+            >
+                <a href="#" class="font-inter font-bold text-base md:text-lg xl:text-xl text-light">
+                    Good<span class="text-primary">Raga</span>
+                </a>
+
+                <button
+                    id="menuToggle"
+                    class="block lg:hidden"
+                    aria-label="Toggle Menu"
+                >
+                    <span
+                        class="hamburger-menu duration-300 origin-top-left"
+                    ></span>
+                    <span class="hamburger-menu duration-300 my-1.5"></span>
+                    <span
+                        class="hamburger-menu duration-300 origin-bottom-left"
+                    ></span>
+                </button>
+
+                <nav
+                    id="menu"
+                    class="hidden lg:flex navbar-fixed"
+                >
+                    <ul class="block lg:flex">
+                        <li class="listitem-nav">
+                            <a href="#produk" class="anchor-nav">Produk</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#cerita" class="anchor-nav">Cerita</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#manfaat" class="anchor-nav">Manfaat</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#jurnal" class="anchor-nav">Journal</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#faq" class="anchor-nav">FAQ</a>
+                        </li>
+                    </ul>
+                    <div class="flex justify-center py-1.5 lg:hidden">
+                        <a href="keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            <span class="absolute -top-2 -right-2 bg-red-500 group-hover:bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full increment">0</span>
+                        </a>
+                    </div>
+                </nav>
+                <div class="hidden lg:flex justify-center dekstopIcon">
+                    <a href="./pages/keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-red-500 group-hover:bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full increment">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section
+            class="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-[#C8F1E2] via-[#FAF6F1] to-[#E3F8CD]"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center"
+                >
+                    <div class="space-y-4">
+                        <div
+                            class="inline-flex items-center space-x-2 bg-white px-3 py-1.5 rounded-full shadow-xs"
+                        >
+                            <span
+                                class="w-1.5 h-1.5 md:w-2 md:h-2 bg-emerald-800 rounded-full animate-pulse"
+                            ></span>
+                            <span
+                                class="text-[10px] font-semibold text-primary tracking-wide uppercase"
+                                >Raga Baik, Energi Alami</span
+                            >
+                        </div>
+                        <h1
+                            class="text-3xl lg:text-5xl font-playfair font-bold leading-tight"
+                        >
+                            Sehat untuk tubuh.<br class="hidden md:block"/>
+                            <span class="text-primary"
+                                >Bersahabat dengan rasa.</span
+                            >
+                        </h1>
+                        <p class="text-sm lg:text-lg text-gray leading-relaxed">
+                            GoodRaga mengubah rempah asli Indonesia menjadi
+                            minuman harian yang ramah di lidah, nyaman di perut,
+                            dan pas buat gaya hidup aktifmu.
+                        </p>
+                        <div class="flex s:inline-flex flex-col s:flex-row gap-5 pt-2 lg:pt-4">
+                            <a
+                                href="#cerita"
+                                class="text-sm lg:text-base px-7 py-3 lg:px-8 lg:py-3.5 bg-transparent text-primary border border-primary font-medium rounded-xl hover:bg-primary hover:text-white transition text-center"
+                            >
+                                Cerita Kami
+                            </a>
+                            <a
+                                href="#produk"
+                                class="text-sm lg:text-base px-7 py-3 lg:px-8 lg:py-3.5 bg-primary text-white font-medium rounded-xl hover:bg-emerald-700 hover:shadow-none transition shadow-lg shadow-emerald-900/20 text-center flex items-center justify-center gap-2 group"
+                            >
+                                Jelajahi Produk
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    class="w-5 lg:w-6 group-hover:translate-x-1 transition-transform"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <g
+                                        id="SVGRepo_bgCarrier"
+                                        stroke-width="0"
+                                    ></g>
+                                    <g
+                                        id="SVGRepo_tracerCarrier"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M6 12H18M18 12L13 7M18 12L13 17"
+                                            stroke="#ffffff"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative mx-auto transform rotate-2 hover:rotate-0 transition duration-500"
+                    >
+                        <img
+                            src="./src/assets/hero.svg"
+                            alt="Jamu Modern GoodRaga"
+                            class="w-full max-w-[450px] lg:max-w-full h-auto object-cover"
+                        />
+                        <div
+                            class="absolute bottom-0 xs:bottom-2 s:bottom-4 font-hand text-base xs:text-xl md:text-2xl xl:text-3xl text-primary bg-secondary px-2 py-1 lg:px-4 lg:py-2 rounded-lg shadow-sm"
+                        >
+                            Dari alam, untuk raga.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produk" class="py-20 bg-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="space-y-4 mb-10 lg:mb-12 text-center">
+                    <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold">
+                        Favorit <span class="text-primary">Mingguan</span>
+                    </h2>
+                    <p class="text-gray">
+                        Dipilih langsung dari yang paling sering dibeli anak
+                        muda.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    <div
+                        class="max-w-[500px] mx-auto lg:mx-0 group relative bg-white border border-gray/20 rounded-2xl p-4 hover:shadow-lg hover:bg-secondary/50 cursor-pointer transition duration-300"
+                    >
+                        <div class="rounded-xl overflow-hidden mb-4 relative">
+                            <img
+                                src="./src/assets/produk.svg"
+                                alt="Kunyit Asam"
+                                class="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
+                            />
+                           <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
+                            <span
+                                class="absolute bottom-0 left-0 bg-primary text-xs px-2.5 py-1.5 rounded-tr-lg text-white"
+                                >Tahan 6 hari</span
+                            >
+                            <svg
+                                width="30"
+                                height="41"
+                                class="absolute top-0 right-6 w-6 h-8 sm:w-8 sm:h-10"
+                                viewBox="0 0 30 41"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0 41V0H30V41L15 25.8947L0 41Z"
+                                    fill="#008357"
+                                />
+                                <path
+                                    d="M14.0489 6.92705C14.3483 6.00574 15.6517 6.00574 15.9511 6.92705L17.0206 10.2188C17.1545 10.6309 17.5385 10.9098 17.9717 10.9098H21.4329C22.4016 10.9098 22.8044 12.1494 22.0207 12.7188L19.2205 14.7533C18.87 15.0079 18.7234 15.4593 18.8572 15.8713L19.9268 19.1631C20.2261 20.0844 19.1717 20.8506 18.388 20.2812L15.5878 18.2467C15.2373 17.9921 14.7627 17.9921 14.4122 18.2467L11.612 20.2812C10.8283 20.8506 9.77385 20.0844 10.0732 19.1631L11.1428 15.8713C11.2766 15.4593 11.13 15.0079 10.7795 14.7533L7.97933 12.7188C7.19562 12.1494 7.59839 10.9098 8.56712 10.9098H12.0283C12.4615 10.9098 12.8455 10.6309 12.9794 10.2188L14.0489 6.92705Z"
+                                    fill="white"
+                                />
+                            </svg>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="space-y-2">
+                                <h3
+                                    class="font-bold text-xl group-hover:text-primary transition"
+                                >
+                                    Kunyit Asam Fresh
+                                </h3>
+                                <p class="text-sm text-gray">
+                                    Racikan kunyit dan asam jawa ini memiliki
+                                    perpaduan rasa segar yang begitu harmonis
+                                    tanpa jejak pahit yang sering bikin orang
+                                    kapok minum jamu.
+                                </p>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">Manfaat</h4>
+                                <ul
+                                    class="list-disc list-inside text-sm text-gray space-y-1"
+                                >
+                                    <li>Meredakan nyeri haid (PMS)</li>
+                                    <li>Mendetoks racun dalam tubuh</li>
+                                    <li>Mencerahkan kulit dari dalam</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">
+                                    Bahan Utama
+                                </h4>
+                                <ul
+                                    class="list-disc list-inside text-sm text-gray space-y-1"
+                                >
+                                    <li>Biang Kunyit</li>
+                                    <li>Asam Jawa</li>
+                                    <li>Gula Aren Organik</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">
+                                    Karakter Rasa
+                                </h4>
+                                <div
+                                    class="flex justify-start flex-col xl:flex-row lg:justify-between space-y-1"
+                                >
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Manis</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Asam</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Segar</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex justify-between items-center pt-3 border-t border-gray/10"
+                            >
+                                <div class="flex gap-2 items-baseline">
+                                    <h3 class="font-bold text-xl">
+                                        <span class="text-sm">Rp</span> 15.000
+                                    </h3>
+                                    <span class="text-sm text-gray font-medium"
+                                        >/ 250 ml</span
+                                    >
+                                </div>
+                                <button
+                                    class="px-3 py-1.5 rounded-full bg-primary text-white font-semibold flex items-center justify-center hover:bg-emerald-700 transition"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-[500px] mx-auto lg:mx-0 group relative bg-white border border-gray/20 rounded-2xl p-4 hover:shadow-lg hover:bg-secondary/50 cursor-pointer transitionduration-300"
+                    >
+                        <div class="rounded-xl overflow-hidden mb-4 relative">
+                            <img
+                                src="./src/assets/produk.svg"
+                                alt="Kunyit Asam"
+                                class="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
+                            />
+                           <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
+                            <span
+                                class="absolute bottom-0 left-0 bg-primary text-xs px-2.5 py-1.5 rounded-tr-lg text-white"
+                                >Tahan 7 hari</span
+                            >
+                        </div>
+                        <div class="space-y-5">
+                            <div class="space-y-2">
+                                <h3
+                                    class="font-bold text-xl group-hover:text-primary transition"
+                                >
+                                    Wedang Rempah Calm
+                                </h3>
+                                <p class="text-sm text-gray">
+                                    Kehangatan rempah yang meresap lembut ini
+                                    menyatu dengan aroma menenangkan yang ampuh
+                                    merilekskan tubuh dan pikiranmu seketika.
+                                </p>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">Manfaat</h4>
+                                <ul
+                                    class="list-disc list-inside text-sm text-gray"
+                                >
+                                    <li>
+                                        Meningkatkan kualitas tidur (Deep Sleep)
+                                    </li>
+                                    <li>Mengusir masuk angin & kembung</li>
+                                    <li>Menghangatkan suhu tubuh</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">
+                                    Bahan Utama
+                                </h4>
+                                <ul
+                                    class="list-disc list-inside text-sm text-gray"
+                                >
+                                    <li>Jahe Merah</li>
+                                    <li>Serai</li>
+                                    <li>Kayu Manis</li>
+                                    <li>Cengkeh</li>
+                                    <li>Pandan</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">
+                                    Karakter Rasa
+                                </h4>
+                                <div
+                                    class="flex justify-start flex-col xl:flex-row lg:justify-between space-y-1"
+                                >
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Manis</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Pedas</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Aroma</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex justify-between items-center pt-3 border-t border-gray/10"
+                            >
+                                <div class="flex gap-2 items-baseline">
+                                    <h3 class="font-bold text-xl">
+                                        <span class="text-sm">Rp</span> 15.000
+                                    </h3>
+                                    <span class="text-sm text-gray font-medium"
+                                        >/ 250 ml</span
+                                    >
+                                </div>
+                                <button
+                                    class="px-3 py-1.5 rounded-full bg-primary text-white font-semibold flex items-center justify-center hover:bg-emerald-700 transition"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-[500px] mx-auto lg:mx-0 group relative bg-white border border-gray/20 rounded-2xl p-4 hover:shadow-lg hover:bg-secondary/50 cursor-pointer transition duration-300"
+                    >
+                        <div class="rounded-xl overflow-hidden mb-4 relative">
+                            <img
+                                src="./src/assets/produk.svg"
+                                alt="Kunyit Asam"
+                                class="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
+                            />
+                           <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
+                            <span
+                                class="absolute bottom-0 left-0 bg-primary text-xs px-2.5 py-1.5 rounded-tr-lg text-white"
+                                >Tahan 2 hari</span
+                            >
+                        </div>
+                        <div class="space-y-5">
+                            <div class="space-y-2">
+                                <h3
+                                    class="font-bold text-xl group-hover:text-primary transition"
+                                >
+                                    Imun Boost
+                                </h3>
+                                <p class="text-sm text-gray">
+                                    Konsumsi secara rutin untuk membangun
+                                    pertahanan alami tubuh agar kamu selalu siap
+                                    dan bugar menghadapi padatnya aktivitas
+                                    harian.
+                                </p>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">Manfaat</h4>
+                                <ul
+                                    class="list-disc list-inside text-sm text-gray"
+                                >
+                                    <li>Meningkatkan sistem kekebalan tubuh</li>
+                                    <li>Menjaga kesehatan mata</li>
+                                    <li>Booster energi instan di pagi hari</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">
+                                    Bahan Utama
+                                </h4>
+                                <ul
+                                    class="list-disc list-inside text-sm text-gray"
+                                >
+                                    <li>Jeruk Baby Java</li>
+                                    <li>Wortel Impor</li>
+                                    <li>Apel Malang</li>
+                                    <li>Madu Hutan</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-lg">
+                                    Karakter Rasa
+                                </h4>
+                                <div
+                                    class="flex justify-start flex-col xl:flex-row lg:justify-between space-y-1"
+                                >
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Manis</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Asam</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <span class="text-sm">Ringan</span>
+                                        <div class="flex gap-1">
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-primary"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                            <span
+                                                class="w-2 h-2 rounded-full bg-gray/20"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex justify-between items-center pt-3 border-t border-gray/10"
+                            >
+                                <div class="flex gap-2 items-baseline">
+                                    <h3 class="font-bold text-xl">
+                                        <span class="text-sm">Rp</span> 18.000
+                                    </h3>
+                                    <span class="text-sm text-gray font-medium"
+                                        >/ 250 ml</span
+                                    >
+                                </div>
+                                <button
+                                    class="px-3 py-1.5 rounded-full bg-primary text-white font-semibold flex items-center justify-center hover:bg-emerald-700 transition"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a
+                        href="#"
+                        class="inline-flex gap-2 justify-center items-center text-sm lg:text-base font-semibold text-primary group"
+                    >
+                        Lihat Semua Menu
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="w-6 group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M6 12H18M18 12L13 7M18 12L13 17"
+                                    stroke="#008357"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cerita" class="py-24 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="absolute bottom-0 right-0 md:left-0 w-40 h-40 lg:w-58 lg:h-58 bg-orange-100 rounded-full blur-xl opacity-60 z-[-99]"
+                ></div>
+                <h2
+                    class="text-center text-2xl md:text-3xl xl:text-4xl font-playfair font-bold text-black uppercase leading-tight mb-10 lg:mb-12"
+                >
+                    KAMI JUGA DULU MIKIR KALO <br class="hidden md:block" /><span class="text-emerald-800">JAMU ITU PAHIT.</span>
+                </h2>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-start"
+                >
+                    <div class="relative mx-auto">
+                        <img
+                            src="./src/assets/cerita.svg"
+                            alt="Founder GoodRaga"
+                            class="w-full max-w-[450px] lg:max-w-full object-cover"
+                        />
+                        <div
+                            class="absolute -bottom-4 right-6 transform -rotate-4"
+                        >
+                            <span
+                                class="font-hand text-base xs:text-xl md:text-2xl xl:text-3xl text-primary bg-secondary px-2 py-1 lg:px-4 lg:py-2 rounded-lg shadow-sm"
+                            >
+                                Nenek Approved.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="border-l-3 border-primary pl-3">
+                            <p class="font-medium text-xs lg:text-sm text-primary italic">
+                                Sampai akhirnya sadar. Masalahnya bukan jamunya,
+                                tapi caranya.
+                            </p>
+                        </div>
+
+                        <div class="text-gray space-y-4 text-sm lg:text-base">
+                            <p>
+                                Dulu, minum jamu rasanya kayak sebuah "hukuman"
+                                buat lidah. Pahit, bau menyengat, dan ribet.
+                                Padahal, rempah nusantara itu punya potensi rasa
+                                yang luar biasa kalau diracik dengan pas.
+                            </p>
+                            <p>
+                                GoodRaga lahir dari keresahan itu. Kami ingin
+                                ngenalin ulang kebaikan alam ke generasi
+                                sekarang dengan pendekatan baru: rasa yang enak,
+                                bahan yang clean, dan kemasan yang nggak
+                                malu-maluin.
+                            </p>
+                        </div>
+
+                        <a
+                            href="story_detail.html"
+                            class="flex xs:inline-flex gap-2 items-center justify-center text-sm lg:text-base px-7 py-3 lg:px-8 border border-primary font-medium rounded-full text-primary hover:bg-primary hover:text-white transition duration-300 group"
+                        >
+                            Baca Perjalanan Lengkap
+                            <svg
+                                viewBox="0 0 24 24"
+                                class="w-5 lg:w-6 transition-all duration-300 group-hover:translate-x-1 text-primary group-hover:text-white"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                <path
+                                    d="M6 12H18M18 12L13 7M18 12L13 17"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </a>
+
+                        <div
+                            class="flex items-center gap-8 border-t border-gray/20 pt-6 mt-2"
+                        >
+                            <svg viewBox="0 0 147 125" class="w-24 h-24 opacity-70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_24_2496" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="147" height="125">
+                                <path d="M0 0H147V125H0V0Z" fill="white"/>
+                                </mask>
+                                <g mask="url(#mask0_24_2496)">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M45.1572 71.0747C54.5468 60.7602 65.7794 50.8644 77.703 43.4346C82.8975 40.1996 86.4761 38.8179 89.3116 38.1051C94.2487 22.3734 94.2114 11.7682 89.3037 6.88314C86.4456 4.03876 79.7978 0.914883 62.1285 7.27152C26.7765 19.9915 7.22713 44.5493 2.8773 50.2111C2.59837 50.5725 2.26751 51.0114 2.26751 51.0114C2.14329 51.1203 2.03262 51.255 1.8926 51.3381C1.7537 51.42 1.59222 51.4728 1.43751 51.4941C1.27603 51.5165 1.10665 51.5087 0.95307 51.4694L0.504762 51.255C0.394096 51.1315 0.261975 51.026 0.173894 50.8835C0.0925891 50.7465 0.0417733 50.5882 0.0191885 50.43C-0.0022669 50.2728 0.0045084 50.1067 0.0417733 49.9518C0.0858137 49.7913 0.173894 49.6476 0.25407 49.505C0.26988 49.4803 0.827725 48.7563 0.87854 48.6924C5.8009 42.265 25.4982 17.8442 60.8943 4.90195C71.1794 1.1405 84.2492 -1.89807 91.1997 4.91991C95.8352 9.4772 98.0316 18.713 92.4633 37.4507C92.6101 37.4147 92.7423 37.3777 92.845 37.3384C92.9625 37.3036 93.0799 37.2576 93.2052 37.2363C93.3148 37.2172 93.9472 37.1038 94.5863 37.5337C94.8878 37.7425 95.0561 37.9962 95.0933 38.0445L95.2616 38.3756C95.2989 38.4957 95.3429 38.6124 95.3655 38.7348C95.3869 38.8459 95.4976 39.4745 95.0707 40.1042C94.8585 40.4107 94.601 40.5768 94.5569 40.6082C94.5197 40.6307 94.3661 40.7306 94.0793 40.8327C93.3001 41.1133 92.4114 41.2144 91.1997 41.4602C90.8835 42.4154 90.5459 43.3931 90.1924 44.3932C90.0456 44.7928 88.4229 49.4624 85.4327 56.5161C85.5569 56.442 85.6597 56.4106 85.6969 56.3993C86.2627 56.222 86.7031 56.4813 86.7765 56.5262C87.2835 56.8304 87.3795 57.3265 87.3942 57.4118C87.4088 57.4848 87.4156 57.5589 87.4156 57.633C87.4235 57.707 87.4088 57.7811 87.4009 57.8541C87.4009 57.8597 85.4767 70.1442 85.6743 75.9138C86.1893 74.569 86.6816 73.0133 86.8284 72.5429C88.3337 67.8465 90.6848 59.4806 90.8101 59.081C90.8316 59.0091 90.8542 58.9362 90.8903 58.8677C91.1557 58.3199 91.6548 58.174 91.7429 58.1493C92.3233 57.9787 92.7716 58.2514 92.845 58.2975C93.3667 58.6174 93.4548 59.127 93.4695 59.2145C93.4842 59.2897 93.4921 59.3661 93.4921 59.4424C93.4921 59.5187 93.4842 59.5939 93.4774 59.6691C93.4695 59.7657 93.2933 60.8017 93.2786 60.8994C92.1912 67.3615 91.141 70.5988 91.2212 71.8481C91.2291 71.9514 91.2437 72.0041 91.2505 72.0232C91.3533 72.113 91.5667 72.2051 91.7508 72.2724C92.0218 71.7954 92.2872 70.9232 92.3312 70.8064C93.1239 68.2404 93.9618 63.5406 94.7037 58.7914C94.7184 58.6746 94.7331 58.5568 94.7557 58.4411C94.7704 58.3615 94.7918 58.2829 94.8144 58.2054C95.0267 57.5937 95.5416 57.3905 95.6297 57.3557C96.2316 57.1177 96.724 57.377 96.8053 57.4208C97.3778 57.725 97.4952 58.2638 97.5178 58.3558C97.5539 58.5242 97.5472 58.5253 97.5539 58.6982C97.7233 62.5652 97.5912 65.2715 97.6206 66.7711C98.0982 65.7822 99.1123 63.0916 101.977 56.9292C102.101 56.662 102.947 54.8346 104.13 52.3775C104.181 52.2641 104.232 52.1474 104.291 52.0351C104.335 51.9622 104.372 51.8892 104.423 51.8218C104.806 51.2842 105.372 51.2359 105.467 51.2269C106.135 51.1708 106.539 51.567 106.606 51.6355C106.665 51.6905 106.98 51.9981 107.032 52.5122C107.038 52.5952 107.032 52.6772 107.032 52.7602C107.032 52.8669 106.936 54.0399 106.929 54.1521C106.774 56.1502 106.606 57.8765 106.458 59.301C107.509 57.1312 108.56 54.9592 109.624 52.7984C109.662 52.7243 109.728 52.6682 109.787 52.6098C110.066 52.3416 110.374 52.2574 110.433 52.2417C111.08 52.0666 111.557 52.3797 111.638 52.4336C112.189 52.7995 112.27 53.3608 112.285 53.4573C112.292 53.5392 112.314 53.6257 112.3 53.7065C112.241 53.9961 112.181 54.2846 112.122 54.5731C112.747 54.6112 113.1 55.0153 113.159 55.086C113.408 55.3712 113.475 55.6821 113.49 55.7393C113.526 55.9189 113.526 55.9627 113.519 55.9829C113.115 59.6894 113.019 60.2293 112.703 63.0052C113.717 61.8726 115.319 59.7545 117.713 55.929C118.037 52.7625 118.448 49.5847 118.918 46.4777C121.548 29.1937 126.692 10.6502 132.878 3.80641C134.037 2.51779 134.942 1.95543 135.728 1.49633C137.189 0.64212 139.511 -0.455672 141.378 0.60171C143.119 1.58388 143.258 3.75477 143.28 4.5798C143.339 6.27475 143.119 10.8017 137.983 23.1524C133.458 34.0585 126.699 47.1478 121.181 56.1255C120.498 63.0388 120.248 69.629 120.535 75.1931C120.615 75.1392 120.697 75.091 120.77 75.0461C121.24 74.752 121.732 74.7733 121.82 74.7767C122.585 74.8104 123.025 75.2773 123.098 75.3592C123.106 75.3604 123.327 75.6567 123.327 75.6567C123.385 75.769 123.452 75.8767 123.495 75.9935C123.532 76.099 123.752 76.6995 123.436 77.3932C123.283 77.7311 123.054 77.9387 123.018 77.978C122.827 78.1531 122.82 78.1441 122.599 78.2743C122.195 78.5123 121.608 78.8434 120.858 79.2621C121.145 81.7215 121.556 83.8879 122.128 85.676C122.526 86.9298 123.613 89.9909 125.531 90.4398C125.971 90.542 126.677 90.5959 128.021 90.0054C130.173 89.0592 132.061 87.1925 134.177 85.4448C137.549 82.6543 140.238 79.3744 143.809 76.4245C143.897 76.3515 144.397 75.9373 145.168 76.0103C145.734 76.063 146.094 76.356 146.16 76.4099C146.461 76.649 146.608 76.9319 146.638 76.9835C146.689 77.0823 146.998 77.6469 146.778 78.3765C146.675 78.7323 146.483 78.9692 146.447 79.0141C146.292 79.1982 146.285 79.1925 146.101 79.3429C142.809 82.0504 140.04 85.3673 136.514 88.2566C134.089 90.2468 131.511 92.824 128.138 93.8051C126.809 94.1934 122.497 95.1318 119.689 89.2893C118.668 87.1667 117.956 84.3784 117.508 81.1311C106.12 87.4787 79.8565 102.296 57.4637 119.578C57.397 119.624 57.0526 119.895 56.5298 119.832C56.3762 119.812 56.2147 119.763 56.0747 119.684L55.693 119.363C55.6196 119.216 55.5168 119.08 55.4728 118.922C55.4288 118.768 55.4209 118.602 55.4434 118.444C55.4581 118.284 55.5089 118.126 55.5902 117.987C55.6704 117.842 55.7958 117.729 55.9132 117.608C55.9358 117.587 57.0808 116.693 57.1847 116.614C79.8339 99.0415 106.914 83.1987 117.103 77.2226C116.774 72.6877 116.839 67.5367 117.185 62.1903C116.215 63.5395 115.334 64.635 114.576 65.4163C113.607 66.422 112.453 67.3604 111.197 67.0663C110.852 66.9844 109.846 66.6488 109.574 65.1626C109.566 65.1368 109.544 65.0054 109.53 64.8427C109.404 63.6629 109.427 62.8054 109.544 62.1083C109.251 62.0454 108.971 61.895 108.758 61.6683C108.545 61.4505 108.413 61.1957 108.325 60.8781C107.891 62.1375 107.457 63.3947 107.017 64.6507C106.98 64.754 106.679 65.0178 106.65 65.047C106.26 65.3826 105.504 66.0168 104.555 65.7844C104.306 65.7227 103.461 65.4488 103.241 64.2669C103.115 63.5709 103.204 62.4787 103.388 60.7086C102.616 62.4058 101.867 64.1041 101.066 65.982C100.192 68.0339 99.8836 68.8309 99.1191 69.4022C98.7148 69.6986 98.0316 69.9994 97.5686 70.1116C96.7386 70.3159 96.0193 70.1083 95.5337 69.6054C95.2108 70.9254 94.8799 72.0603 94.5344 72.8797C94.1967 73.6755 93.5576 74.954 92.2284 75.1078C91.7948 75.1572 91.3759 75.0921 90.634 74.798C90.1123 74.5915 89.6199 74.3165 89.2303 73.9112C88.555 75.9766 87.9814 77.5257 87.5037 78.4966C87.0927 79.3216 86.4896 80.3341 85.4248 80.4306C85.2407 80.4475 83.9556 80.5508 83.3752 78.8188C83.1177 78.0622 82.9122 76.741 82.9935 73.9584C80.796 81.57 78.2767 89.5475 76.5794 92.7331C76.0216 93.7905 75.3824 94.6795 74.4124 94.7524C74.1403 94.7726 73.0754 94.7693 72.6271 93.3325C72.5458 93.0687 72.2748 92.192 72.3482 89.3712C72.3922 87.5068 72.7739 84.5053 73.3543 80.9818C56.9273 109.565 39.5595 122.931 29.105 124.699C23.2793 125.683 19.782 123.046 19.0774 118.766C18.5184 115.404 19.7527 111.2 20.0463 110.199C22.9191 100.458 31.2506 86.9489 42.7113 73.8214C42.4764 73.7507 41.9908 73.5532 41.6678 73.0301C41.477 72.7158 41.433 72.4161 41.4251 72.36C41.4104 72.2365 41.4104 72.1119 41.4183 71.9873C41.4183 71.9244 42.7485 47.4183 43.0342 37.4787C43.1517 33.4344 43.1302 33.4333 43.5412 22.1018C43.5412 22.0053 43.5853 20.894 43.5853 20.894C43.6226 20.7335 43.6293 20.5629 43.696 20.4125C43.7614 20.2665 43.8642 20.133 43.9817 20.023C44.1002 19.913 44.2391 19.8232 44.3859 19.7659L44.8783 19.6817C45.0397 19.7199 45.2159 19.7277 45.3706 19.7951C45.5174 19.8613 45.6574 19.959 45.767 20.0757C45.8776 20.1924 45.9657 20.3316 46.0177 20.4809C46.0764 20.6358 46.0911 20.8042 46.0978 20.9692C46.0978 21.0601 45.8776 29.3149 45.8189 35.7299C45.767 41.4647 45.7523 41.4636 45.4813 54.6617C45.2893 63.5922 45.1945 68.9577 45.1572 71.0747ZM122.099 48.5004C130.005 34.3986 138.792 15.221 139.938 6.56211C140.238 4.27897 139.886 3.54262 139.776 3.40905C139.519 3.35292 138.637 3.46405 136.837 4.62807C133.59 6.72262 129.622 14.5576 126.177 27.7782C124.48 34.2808 123.092 41.4254 122.099 48.5004ZM109.867 60.6199C109.867 60.6221 109.867 60.6221 109.867 60.6255C109.867 60.6255 109.867 60.6221 109.867 60.6199ZM82.3544 52.9174C82.3544 52.9196 82.3465 52.9219 82.3465 52.9253L82.3544 52.923V52.9174ZM79.9513 61.7704C81.6339 58.1235 83.3379 54.1779 85.0499 49.9226C86.1012 47.3016 87.0486 44.7861 87.8933 42.3773C86.8792 42.7376 85.7116 43.2191 84.3599 43.8803C82.8761 44.6065 80.7813 45.7178 77.0571 48.1468C49.5432 66.0819 26.4976 96.6988 22.6989 112.868C21.8022 116.714 22.2946 118.484 22.368 118.76C22.6616 119.921 23.4701 121.561 26.3644 121.717C33.2121 122.086 47.3908 113.855 62.5181 92.4547C65.5445 88.1735 70.0479 81.3477 75.1103 71.6416C76.7703 63.6023 78.8131 55.4812 80.1422 52.4089C80.6131 51.328 81.0761 50.6298 81.862 50.4704C82.3758 50.3671 82.7507 50.6197 82.8174 50.6634C82.9495 50.7532 83.0669 50.8689 83.155 51.0036L83.3458 51.4615C83.3379 51.6254 83.3673 51.7927 83.3379 51.9543C83.2724 52.2742 83.1765 52.3663 83.1471 52.3943C82.9935 52.5459 82.8829 52.5997 82.7801 52.6446C82.7948 52.6559 82.8094 52.6682 82.8241 52.6817C82.3544 53.3383 81.3471 56.1928 79.9513 61.7704ZM84.396 58.9115C82.0675 64.2523 79.6803 69.235 77.2559 73.8708C75.9775 80.2915 74.9782 86.5336 74.9115 89.58C74.9115 89.6474 74.9048 89.9033 74.9048 90.2434C75.0369 89.9437 75.1837 89.6013 75.3373 89.2107C78.3941 81.5531 83.0082 64.2332 84.396 58.9115Z" fill="#008357"/>
+                                </g>
+                            </svg>
+                            <span
+                                class="text-sm font-semibold text-gray uppercase tracking-wider"
+                                >Founder, GoodRaga</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="manfaat"
+            class="relative py-20 text-bg overflow-hidden"
+            >
+            <img
+                src="./src/assets/manfaat.svg"
+                alt="dirt illustration"
+                class="absolute inset-0 w-full h-full object-cover -z-10"
+            />
+
+            <div class="absolute inset-0 bg-black/60 -z-0"></div>
+
+            <div class="relative z-10 max-w-2xl mx-auto px-4 text-center space-y-4">
+                <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold">
+                Dari Tanah,<span class="text-accent"> Bukan Pabrik.</span>
+                </h2>
+
+                <p class="text-sm lg:text-base font-light">
+                Kami tidak punya "resep rahasia". Yang kami punya hanyalah
+                rempah terbaik yang dipilih langsung dari petani lokal.
+                </p>
+
+                <a
+                href="#"
+                class="flex xs:inline-flex gap-2 items-center justify-center text-sm lg:text-base px-7 py-3 lg:px-8 border border-accent font-medium rounded-full text-accent hover:bg-[#8FB36D] hover:border-[#8FB36D] hover:text-white transition duration-300 group mt-6"
+                >
+                Lihat Pustaka Bahan
+                    <svg
+                        viewBox="0 0 24 24"
+                        class="w-5 lg:w-6 transition-all duration-300 group-hover:translate-x-1 text-accent group-hover:text-white"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M6 12H18M18 12L13 7M18 12L13 17"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <section id="jurnal" class="py-24 bg-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold tracking-widest text-emerald-800 uppercase mb-2">
+                        RUANG SEHAT UNTUK HIDUP YANG <span class="text-emerald-500">LEBIH SEIMBANG</span>
+                    </h2>
+                    <p class="text-gray-500 text-sm max-w-xl mx-auto">
+                        Catatan kecil tentang kesehatan, rempah, dan cara menikmati hidup yang lebih seimbang.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3 mb-12" id="filter-container">
+                    </div>
+
+                <div id="articles-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                    </div>
+
+               <div class="text-center mt-12">
+                    <a
+                        href="#"
+                        class="inline-flex gap-2 justify-center items-center text-sm lg:text-base font-semibold text-primary group"
+                    >
+                        Lihat Semua Menu
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="w-6 group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M6 12H18M18 12L13 7M18 12L13 17"
+                                    stroke="#008357"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+        </section>
+
+        <section id="faq" class="py-24 bg-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-playfair font-bold text-black">
+                        Masih ragu? Biar kami jawab dulu.
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <details
+                        class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                        open
+                    >
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Jujur, rasanya pahit nggak?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Nggak dong. Prinsip GoodRaga adalah "Sehat Nggak Harus Pahit". Kami meracik ulang resep kuno agar 'ramah' di lidah modern. Rasanya segar, asam-manis seimbang, dan clean.
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Aman untuk penderita maag atau gerd?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Sangat aman, bahkan dianjurkan! Bahan utama seperti kunyit mengandung zat kurkumin yang efektif meredakan peradangan pada lambung. Namun, jika kamu memiliki lambung yang sangat sensitif, kami sarankan untuk meminumnya setelah makan dan hindari perut kosong, ya.
+                        </div>
+                    </details>
+
+                    <details
+                        class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Tahan berapa lama di suhu ruang?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 space-y-2 animate-fadeIn">
+                            <div>
+                                Karena GoodRaga dibuat 100% alami tanpa pengawet buatan, ketahanannya sangat bergantung pada suhu:
+                                <ul class="list-disc list-inside space-y-1 mt-2">
+                                    <li>Suhu ruang, tahan maksimal 24 jam (karena rentan fermentasi alami)</li>
+                                    <li>Kulkas, tahan 5–7 hari</li>
+                                    <li>Freezer, bisa tahan hingga 2–3 minggu</li>
+                                </ul>
+                            </div>
+                            <span class="text-sm text-primary">Begitu paket sampai, langsung masukkan ke kulkas agar kesegarannya terjaga!</span>
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Anak kecil boleh minum ini?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Boleh banget! Varian Beras Kencur adalah favorit anak-anak GoodRaga. Rasanya yang manis, gurih, dan hangat sangat ampuh untuk menambah nafsu makan si kecil dan menjaga daya tahan tubuh mereka dari flu.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Sudah bersertifikat Halal?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Tentu saja. GoodRaga menggunakan 100% bahan baku rempah alami yang Halal dan Thoyyib. Proses produksi kami juga sangat menjaga kebersihan (higiene) sesuai standar keamanan pangan agar aman dikonsumsi oleh semua kalangan.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Kapan waktu terbaik minumnya?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Sebenarnya fleksibel, tapi ini rekomendasinya:
+                            <ul class="list-disc list-inside space-y-1 mt-2">
+                                <li>Pagi hari (perut kosong), terbaik untuk detoksifikasi dan penyerapan nutrisi maksimal</li>
+                                <li>Siang hari, diminum dingin dengan es batu sangat menyegarkan di cuaca panas</li>
+                                <li>Malam hari (sebelum tidur), cocok untuk varian Jahe/Rempah agar tubuh rileks dan tidur lebih nyenyak</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Bisa request tanpa gula untuk Diabetes?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Bisa! Kami mendukung gaya hidup sehatmu. Kamu bisa memilih opsi Less Sugar atau No Sugar pada saat pemesanan (Pre-Order). Kami juga menyediakan opsi pengganti gula aren dengan pemanis alami nol kalori (seperti Stevia) jika diminta.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <summary
+                            class="flex cursor-pointer items-center justify-between p-6 list-none"
+                        >
+                            <span
+                                class="text-lg font-medium text-black group-open:text-primary transition"
+                                >Bisa pesan untuk acara pernikahan atau acara kantor?</span
+                            >
+                            <span class="transition group-open:rotate-180">
+                                <svg
+                                    fill="none"
+                                    height="24"
+                                    shape-rendering="geometricPrecision"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                >
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="text-gray px-6 pb-6 animate-fadeIn">
+                            Sangat bisa! GoodRaga siap memeriahkan acaramu dengan layanan Jamu Bar (Booth) atau paket Souvenir/Hampers botol mini yang estetik dan sehat. Silakan hubungi admin WhatsApp kami untuk mendapatkan penawaran harga spesial paket Bulk Order.
+                        </div>
+                    </details>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a
+                        href="#"
+                        class="text-primary font-semibold hover:underline"
+                        >Chat via WhatsApp untuk pertanyaan lain &rarr;</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-footer text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8 lg:mb-12"
+                >
+                    <div class="space-y-4 lg:w-[270px]">
+                        <h3 class="text-2xl font-bold">
+                            Good<span class="text-accent-footer">Raga</span>
+                        </h3>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            GoodRaga adalah artisan jamu modern yang berkomitmen menggunakan 100% rempah asli Indonesia dengan standar kebersihan tinggi. <span class="inline lg:hidden">Mendefinisikan ulang cara menikmati jamu. Tanpa rasa pahit, tanpa ribet.</span>
+                        </p>
+                        <div class="mt-6 justify-center lg:justify-start flex gap-5 lg:gap-7">
+                            <a href="https://wa.me/6285778208790"><img class="transition-transform duration-150 hover:scale-110" src="./src/assets/whatsapp.svg" alt="whatsapp logo"/></a>
+                            <a href="https://www.instagram.com/anandast.05/"><img class="transition-transform duration-150 hover:scale-110" src="./src/assets/instagram.svg" alt="instagram logo"/></a>
+                            <a href=""><img class="transition-transform duration-150 hover:scale-110" src="./src/assets/tiktok.svg" alt="tiktok logo"/></a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h2 class="text-light font-bold text-sm md:text-base mb-4">Tautan Cepat</h2>
+                        <ul class="space-y-1.5 lg:space-y-2.5 text-sm text-secondary">
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="./src/assets/arrow.svg" alt="arrow image" /> <a href="#tentang">Produk</a></li>
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="./src/assets/arrow.svg" alt="arrow image" /> <a href="#layanan">Cerita</a></li>
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="./src/assets/arrow.svg" alt="arrow image" /> <a href="#keahlian">Manfaat</a></li>
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="./src/assets/arrow.svg" alt="arrow image" /> <a href="#testimoni">journal</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="">
+                        <h4 class="font-bold text-lg mb-4">Kontak</h4>
+                        <ul class="space-y-3 text-secondary text-sm">
+                            <li class="flex items-center gap-2">
+                                <img src="./src/assets/email.svg" alt="email icon">
+                                halo@goodraga.id
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img src="./src/assets/telephone.svg" alt="telephone icon">
+                                +62 812-3456-7890
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img src="./src/assets/location.svg" alt="location icon">
+                                Kota Tangerang, Indonesia
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w-full lg:w-[270px]">
+                        <h4 class="font-bold text-lg mb-4">
+                            Dapetin Kabar Sehat
+                        </h4>
+                        <p class="text-secondary text-sm mb-4">
+                            Tips kesehatan, update rasa baru, dan promo khusus
+                            member. Nggak bakal nyepam, janji.
+                        </p>
+                        <form class="flex flex-col gap-3">
+                            <textarea
+                                type="text"
+                                placeholder="Pesan kamu di sini..."
+                                class="p-2.5 resize-none rounded-lg bg-footer text-white placeholder-accent-footer border border-accent-footer focus:outline-none focus:ring-1 focus:ring-accent-footer placeholder:text-sm placeholder:font-light placeholder:opacity-80 text-sm font-light"
+                            ></textarea>
+                            <button
+                                type="submit"
+                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black font-semibold rounded-lg transition shadow-lg"
+                            >
+                                Gabung Sekarang
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-accent-footer/50 pt-8 text-center text-secondary/50 text-sm"
+                >
+                    <p><strong>&copy; 2025 GoodRaga Indonesia.</strong> All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="./src/js/script-index.js"></script>
+    </body>
+</html>

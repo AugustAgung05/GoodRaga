@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "./theme/theme.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.listitem-nav{
+    @apply py-1.5 lg:py-3 px-4;
+}
+
+.anchor-nav{
+    @apply text-xs md:text-sm text-white lg:text-black hover:text-primary;
+}
+
+.hamburger-menu{
+    @apply w-[25px] h-[2px] block bg-black;
+}
+
+.navbar-fixed{
+    @apply rounded-lg right-6 top-17 w-[250px] p-2 fixed bg-[#353535] duration-300 shadow-[0_0_5px_0_rgba(0,0,0,0.5)];
+    @apply lg:static lg:w-auto lg:p-0 lg:bg-transparent lg:shadow-none lg:rounded-none lg:backdrop-blur-none;
+}
+
+.hamburger-active > span:nth-child(1) {
+    @apply origin-top-left rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+    @apply origin-bottom-left -rotate-45;
+}

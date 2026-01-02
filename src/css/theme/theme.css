@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-bg: #FAF6F1;
+    --color-primary: #008357;
+    --color-secondary: #ECFDF5;
+    --color-accent: #C1E59F;
+    --color-black: #1F1F1F;
+    --color-gray: #656565;
+    --color-footer: #073827;
+    --color-accent-footer: #FAB66A;
+    
+    --breakpoint-s: 30rem;
+    --breakpoint-xs: 22rem;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    --font-hand: 'Dancing Script', cursive;
+}
