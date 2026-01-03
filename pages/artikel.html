@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Journal — GoodRaga</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"
+        />
+
+        <link rel="stylesheet" href="../src/css/output.css" />
+    </head>
+    <body class="bg-neutral-50 text-neutral-900">
+        <header
+            id="header"
+            class="fixed top-0 w-full z-50 transition-all duration-300"
+        >
+            <div
+                class="max-w-7xl mx-auto px-5 md:px-7 py-5 lg:py-3 flex items-center justify-between"
+            >
+                <a href="../index.html" class="font-inter font-bold text-base md:text-lg xl:text-xl text-light">
+                    Good<span class="text-primary">Raga</span>
+                </a>
+
+                <button
+                    id="menuToggle"
+                    class="block lg:hidden"
+                    aria-label="Toggle Menu"
+                >
+                    <span
+                        class="hamburger-menu duration-300 origin-top-left"
+                    ></span>
+                    <span class="hamburger-menu duration-300 my-1.5"></span>
+                    <span
+                        class="hamburger-menu duration-300 origin-bottom-left"
+                    ></span>
+                </button>
+
+                <nav
+                    id="menu"
+                    class="hidden lg:flex navbar-fixed"
+                >
+                    <ul class="block lg:flex">
+                        <li class="listitem-nav">
+                            <a href="#produk" class="anchor-nav">Produk</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#cerita" class="anchor-nav">Cerita</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#manfaat" class="anchor-nav">Manfaat</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="./artikel.html" class="text-xs md:text-sm text-white font-semibold lg:text-primary">Artikel</a>
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="#faq" class="anchor-nav">FAQ</a>
+                        </li>
+                    </ul>
+                    <div class="flex justify-center py-1.5 lg:hidden">
+                        <a href="keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            <span class="absolute -top-2 -right-2 bg-red-500 group-hover:bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full increment">0</span>
+                        </a>
+                    </div>
+                </nav>
+                <div class="hidden lg:flex justify-center dekstopIcon">
+                    <a href="./pages/keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-red-500 group-hover:bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full increment">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="jurnal" class="py-24 bg-bg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="space-y-4 mb-10 lg:mb-12 text-center">
+                    <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase">
+                        Ruang <span class="text-emerald-800">Hidup Sehat</span>
+                    </h2>
+                    <p class="text-gray">
+                        Catatan kecil tentang kesehatan, rempah, dan cara menikmati hidup yang lebih seimbang.
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-3 mb-8" id="filter-container"></div>
+
+                <div id="articles-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"></div>
+
+            </section>
+        </main>
+        <footer class="bg-footer text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8 lg:mb-12"
+                >
+                    <div class="space-y-4 lg:w-[270px]">
+                        <h3 class="text-2xl font-bold">
+                            Good<span class="text-accent-footer">Raga</span>
+                        </h3>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            GoodRaga adalah artisan jamu modern yang berkomitmen menggunakan 100% rempah asli Indonesia dengan standar kebersihan tinggi. <span class="inline lg:hidden">Mendefinisikan ulang cara menikmati jamu. Tanpa rasa pahit, tanpa ribet.</span>
+                        </p>
+                        <div class="mt-6 justify-center lg:justify-start flex gap-5 lg:gap-7">
+                            <a href="https://wa.me/6285778208790"><img class="transition-transform duration-150 hover:scale-110" src="../src/assets/whatsapp.svg" alt="whatsapp logo"/></a>
+                            <a href="https://www.instagram.com/anandast.05/"><img class="transition-transform duration-150 hover:scale-110" src="../src/assets/instagram.svg" alt="instagram logo"/></a>
+                            <a href=""><img class="transition-transform duration-150 hover:scale-110" src="../src/assets/tiktok.svg" alt="tiktok logo"/></a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h2 class="text-light font-bold text-sm md:text-base mb-4">Tautan Cepat</h2>
+                        <ul class="space-y-1.5 lg:space-y-2.5 text-sm text-secondary">
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="../src/assets/arrow.svg" alt="arrow image" /> <a href="#tentang">Produk</a></li>
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="../src/assets/arrow.svg" alt="arrow image" /> <a href="#layanan">Cerita</a></li>
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="../src/assets/arrow.svg" alt="arrow image" /> <a href="#keahlian">Manfaat</a></li>
+                            <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="../src/assets/arrow.svg" alt="arrow image" /> <a href="#testimoni">journal</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="">
+                        <h4 class="font-bold text-lg mb-4">Kontak</h4>
+                        <ul class="space-y-3 text-secondary text-sm">
+                            <li class="flex items-center gap-2">
+                                <img src="../src/assets/email.svg" alt="email icon">
+                                halo@goodraga.id
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img src="../src/assets/telephone.svg" alt="telephone icon">
+                                +62 812-3456-7890
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img src="../src/assets/location.svg" alt="location icon">
+                                Kota Tangerang, Indonesia
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w-full lg:w-[300px]">
+                        <h4 class="font-bold text-lg mb-4">
+                            Dapetin Kabar Sehat
+                        </h4>
+                        <p class="text-secondary text-sm mb-4">
+                            Tips kesehatan, update rasa baru, dan promo khusus
+                            member. Nggak bakal nyepam, janji.
+                        </p>
+                        <form id="waForm" class="flex flex-col gap-3">
+                            <textarea
+                                id="waMessage"
+                                type="text"
+                                placeholder="Pesan kamu di sini..."
+                                class="p-2.5 resize-none rounded-lg bg-footer text-secondary placeholder-accent-footer border border-accent-footer focus:outline-none focus:ring-1 focus:ring-accent-footer placeholder:text-sm placeholder:font-light placeholder:opacity-80 text-sm font-light"
+                            ></textarea>
+                            <button
+                                type="submit"
+                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black font-semibold rounded-lg transition shadow-lg"
+                            >
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-accent-footer/50 pt-8 text-center text-secondary/50 text-sm"
+                >
+                    <p><strong>&copy; 2025 GoodRaga Indonesia.</strong> All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="../src/js/script-index.js"></script>
+    </body>
+</html>
