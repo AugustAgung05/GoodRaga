@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Journal — GoodRaga</title>
+        <link rel="icon" href="../public/goodraga-logo.png" type="image/png" />
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
@@ -23,8 +25,9 @@
             <div
                 class="max-w-7xl mx-auto px-5 md:px-7 py-5 lg:py-3 flex items-center justify-between"
             >
-                <a href="../index.html" class="font-inter font-bold text-base md:text-lg xl:text-xl text-light">
-                    Good<span class="text-primary">Raga</span>
+                <a href="../index.html" class="flex items-center gap-2">
+                    <img src="../src/assets/goodraga-logo.webp" alt="GoodRaga Logo" class="w-10 h-10 object-contain" />
+                    <p class="font-inter font-bold text-base md:text-lg xl:text-xl text-light">Good<span class="text-emerald-800">Raga</span></p>
                 </a>
 
                 <button
@@ -72,7 +75,7 @@
                     </div>
                 </nav>
                 <div class="hidden lg:flex justify-center dekstopIcon">
-                    <a href="./pages/keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
+                    <a href="./keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
@@ -179,6 +182,9 @@
                 </div>
             </div>
         </footer>
+        <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+            <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
+        </div>
         <script src="../src/js/script-index.js"></script>
     </body>
 </html>

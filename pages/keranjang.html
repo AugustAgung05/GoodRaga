@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./src/assets/goodraga-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="../public/goodraga-logo.png" type="image/png" />
+
 
     <title>Keranjang Belanja - GoodRaga</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -95,7 +96,9 @@
 
         </div>
     </main>
-
+    <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+        <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
+    </div>
     <script>
         let cart = JSON.parse(localStorage.getItem('goodraga_cart')) || [];
         const container = document.getElementById('cart-items-container');
