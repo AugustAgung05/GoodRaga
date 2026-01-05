@@ -53,23 +53,23 @@
                 >
                     <ul class="block lg:flex">
                         <li class="listitem-nav">
-                            <a href="#produk" class="anchor-nav">Produk</a>
+                            <a href="./pages/produk.html" class="anchor-nav">Produk</a>
                         </li>
                         <li class="listitem-nav">
-                            <a href="#cerita" class="anchor-nav">Cerita</a>
+                            <a href="./pages/cerita.html" class="anchor-nav">Cerita</a>
                         </li>
                         <li class="listitem-nav">
-                            <a href="#manfaat" class="anchor-nav">Manfaat</a>
+                            <a href="./pages/manfaat.html" class="anchor-nav">Manfaat</a>
                         </li>
                         <li class="listitem-nav">
                             <a href="./pages/artikel.html" class="anchor-nav">Artikel</a>
                         </li>
                         <li class="listitem-nav">
-                            <a href="#faq" class="anchor-nav">FAQ</a>
+                            <a href="./pages/faq.html" class="anchor-nav">FAQ</a>
                         </li>
                     </ul>
                     <div class="flex justify-center py-1.5 lg:hidden">
-                        <a href="keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
+                        <a href="./pages/keranjang.html" class="relative hover:text-primary group text-white lg:text-black">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
@@ -89,7 +89,7 @@
         </header>
 
         <section
-            class="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-[#C8F1E2] via-[#FAF6F1] to-[#E3F8CD]"
+            class="relative pt-28 pb-20 lg:pt-40 lg:pb-28 h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#C8F1E2] via-[#FAF6F1] to-[#E3F8CD]"
         >
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
@@ -179,7 +179,52 @@
             </div>
         </section>
 
-        <section id="produk" class="py-20 bg-bg">
+        <section id="produk" class="py-18 lg:py-24 bg-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="space-y-4 mb-10 lg:mb-12 text-center">
+                    <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase">
+                        Favorit <span class="text-emerald-800">Mingguan</span>
+                    </h2>
+                    <p class="text-gray">
+                        Dipilih langsung dari yang paling sering dibeli anak
+                        muda.
+                    </p>
+                </div>
+                <div id="home-product-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"></div>
+    
+                <div class="text-center mt-12">
+                    <a
+                        href="./pages/produk.html"
+                        class="inline-flex gap-2 justify-center items-center text-sm lg:text-base font-semibold text-primary group"
+                    >
+                        Lihat semua menu
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="w-6 group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M6 12H18M18 12L13 7M18 12L13 17"
+                                    stroke="#008357"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- <section id="produk" class="lg:py-24 bg-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="space-y-4 mb-10 lg:mb-12 text-center">
                     <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase">
@@ -633,7 +678,7 @@
                 </div>
                 <div class="text-center mt-12">
                     <a
-                        href="#"
+                        href="./pages/produk.html"
                         class="inline-flex gap-2 justify-center items-center text-sm lg:text-base font-semibold text-primary group"
                     >
                         Lihat semua menu
@@ -662,9 +707,9 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section id="cerita" class="py-24 relative overflow-hidden">
+        <section id="cerita" class="py-18 lg:py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
                     class="absolute bottom-0 right-0 md:left-0 w-40 h-40 lg:w-58 lg:h-58 bg-orange-100 rounded-full blur-xl opacity-60 z-[-99]"
@@ -762,7 +807,7 @@
 
         <section
             id="manfaat"
-            class="relative py-20 text-bg overflow-hidden"
+            class="relative py-24 my-18 lg:my-24 text-bg overflow-hidden"
             >
             <img
                 src="./src/assets/manfaat.webp"
@@ -784,7 +829,7 @@
 
                 <a
                 href="#"
-                class="flex xs:inline-flex gap-2 items-center justify-center text-sm lg:text-base px-7 py-3 lg:px-8 border border-accent font-medium rounded-full text-accent hover:bg-[#8FB36D] hover:border-[#8FB36D] hover:text-white transition duration-300 group mt-6"
+                class="flex xs:inline-flex gap-2 items-center justify-center text-sm lg:text-base px-7 py-3 lg:px-8 border border-accent font-medium rounded-full text-accent hover:bg-[#8FB36D] hover:border-[#8FB36D] hover:text-white transition duration-300 group mt-8"
                 >
                 Lihat pustaka bahan
                     <svg
@@ -805,7 +850,7 @@
             </div>
         </section>
 
-        <section id="jurnal" class="py-24 bg-bg">
+        <section id="artikel" class="py-18 lg:py-24 bg-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="space-y-4 mb-10 lg:mb-12 text-center">
@@ -851,269 +896,25 @@
                 </div>
         </section>
 
-        <section id="faq" class="py-24 bg-bg">
+        <section id="faq" class="py-18 lg:py-24 bg-bg">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-playfair font-bold text-black">
-                        Masih ragu? Biar kami jawab dulu.
+                <div class="space-y-4 text-center mb-10 lg:mb-12">
+                    <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase">
+                        Masih Ragu? <span class="text-emerald-800">Biar Kami Jawab Dulu</span>
                     </h2>
+                    <p class="text-gray">
+                        Jawaban jujur untuk pertanyaan yang sering muncul sebelum kamu mencoba.
+                    </p>
                 </div>
 
-                <div class="space-y-4">
-                    <details
-                        class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300"
-                        open
-                    >
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Jujur, rasanya pahit nggak?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Nggak dong. Prinsip GoodRaga adalah "Sehat Nggak Harus Pahit". Kami meracik ulang resep kuno agar 'ramah' di lidah modern. Rasanya segar, asam-manis seimbang, dan clean.
-                        </div>
-                    </details>
-
-                    <details
-                        class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300"
-                    >
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Aman untuk penderita maag atau gerd?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Sangat aman, bahkan dianjurkan! Bahan utama seperti kunyit mengandung zat kurkumin yang efektif meredakan peradangan pada lambung. Namun, jika kamu memiliki lambung yang sangat sensitif, kami sarankan untuk meminumnya setelah makan dan hindari perut kosong, ya.
-                        </div>
-                    </details>
-
-                    <details
-                        class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300"
-                    >
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Tahan berapa lama di suhu ruang?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 space-y-2 animate-fadeIn">
-                            <div>
-                                Karena GoodRaga dibuat 100% alami tanpa pengawet buatan, ketahanannya sangat bergantung pada suhu:
-                                <ul class="list-disc list-inside space-y-1 mt-2">
-                                    <li>Suhu ruang, tahan maksimal 24 jam (karena rentan fermentasi alami)</li>
-                                    <li>Kulkas, tahan 5–7 hari</li>
-                                    <li>Freezer, bisa tahan hingga 2–3 minggu</li>
-                                </ul>
-                            </div>
-                            <span class="text-sm text-primary">Begitu paket sampai, langsung masukkan ke kulkas agar kesegarannya terjaga!</span>
-                        </div>
-                    </details>
-                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Anak kecil boleh minum ini?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Boleh banget! Varian Beras Kencur adalah favorit anak-anak GoodRaga. Rasanya yang manis, gurih, dan hangat sangat ampuh untuk menambah nafsu makan si kecil dan menjaga daya tahan tubuh mereka dari flu.
-                        </div>
-                    </details>
-                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Sudah bersertifikat Halal?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Tentu saja. GoodRaga menggunakan 100% bahan baku rempah alami yang Halal dan Thoyyib. Proses produksi kami juga sangat menjaga kebersihan (higiene) sesuai standar keamanan pangan agar aman dikonsumsi oleh semua kalangan.
-                        </div>
-                    </details>
-                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Kapan waktu terbaik minumnya?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Sebenarnya fleksibel, tapi ini rekomendasinya:
-                            <ul class="list-disc list-inside space-y-1 mt-2">
-                                <li>Pagi hari (perut kosong), terbaik untuk detoksifikasi dan penyerapan nutrisi maksimal</li>
-                                <li>Siang hari, diminum dingin dengan es batu sangat menyegarkan di cuaca panas</li>
-                                <li>Malam hari (sebelum tidur), cocok untuk varian Jahe/Rempah agar tubuh rileks dan tidur lebih nyenyak</li>
-                            </ul>
-                        </div>
-                    </details>
-                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Bisa request tanpa gula untuk Diabetes?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Bisa! Kami mendukung gaya hidup sehatmu. Kamu bisa memilih opsi Less Sugar atau No Sugar pada saat pemesanan (Pre-Order). Kami juga menyediakan opsi pengganti gula aren dengan pemanis alami nol kalori (seperti Stevia) jika diminta.
-                        </div>
-                    </details>
-                    <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between p-6 list-none"
-                        >
-                            <span
-                                class="text-lg font-medium text-black group-open:text-primary transition"
-                                >Bisa pesan untuk acara pernikahan atau acara kantor?</span
-                            >
-                            <span class="transition group-open:rotate-180">
-                                <svg
-                                    fill="none"
-                                    height="24"
-                                    shape-rendering="geometricPrecision"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                >
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="text-gray px-6 pb-6 animate-fadeIn">
-                            Sangat bisa! GoodRaga siap memeriahkan acaramu dengan layanan Jamu Bar (Booth) atau paket Souvenir/Hampers botol mini yang estetik dan sehat. Silakan hubungi admin WhatsApp kami untuk mendapatkan penawaran harga spesial paket Bulk Order.
-                        </div>
-                    </details>
-                </div>
+                <div id="home-faq-container" class="space-y-4"></div>
 
                 <div class="text-center mt-12">
                     <a
-                        href="#"
+                        href="./pages/faq.html"
                         class="inline-flex gap-2 justify-center items-center text-sm lg:text-base font-semibold text-primary group"
                     >
-                        Chat via WhatsApp untuk pertanyaan lain
+                        Lihat semua pertanyaan
                         <svg
                             viewBox="0 0 24 24"
                             class="w-6 group-hover:translate-x-1 transition-transform"
@@ -1141,13 +942,13 @@
             </div>
         </section>
 
-        <footer class="bg-footer text-white py-8">
+        <footer class="bg-footer text-white pt-8 pb-4">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
-                    class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8 lg:mb-12"
+                    class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8"
                 >
                     <div class="space-y-4 lg:w-[270px]">
-                        <h3 class="text-2xl font-bold">
+                        <h3 class="text-lg font-bold">
                             Good<span class="text-accent-footer">Raga</span>
                         </h3>
                         <p class="text-secondary text-sm leading-relaxed">
@@ -1161,7 +962,7 @@
                     </div>
 
                     <div class="">
-                        <h2 class="text-light font-bold text-sm md:text-base mb-4">Tautan Cepat</h2>
+                        <h3 class="text-lg font-bold mb-4">Jelajahi Halaman</h3>
                         <ul class="space-y-1.5 lg:space-y-2.5 text-sm text-secondary">
                             <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="./src/assets/arrow.svg" alt="arrow image" /> <a href="#tentang">Produk</a></li>
                             <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="./src/assets/arrow.svg" alt="arrow image" /> <a href="#layanan">Cerita</a></li>
@@ -1171,11 +972,11 @@
                     </div>
 
                     <div class="">
-                        <h4 class="font-bold text-lg mb-4">Kontak</h4>
+                        <h3 class="text-lg font-bold mb-4">Kontak</h3>
                         <ul class="space-y-3 text-secondary text-sm">
                             <li class="flex items-center gap-2">
                                 <img src="./src/assets/email.svg" alt="email icon">
-                                halo@goodraga.id
+                                customercare@goodraga.id
                             </li>
                             <li class="flex items-center gap-2">
                                 <img src="./src/assets/telephone.svg" alt="telephone icon">
@@ -1189,9 +990,9 @@
                     </div>
 
                     <div class="w-full lg:w-[300px]">
-                        <h4 class="font-bold text-lg mb-4">
+                        <h3 class="text-lg font-bold mb-4">
                             Dapetin Kabar Sehat
-                        </h4>
+                        </h3>
                         <p class="text-secondary text-sm mb-4">
                             Tips kesehatan, update rasa baru, dan promo khusus
                             member. Nggak bakal nyepam, janji.
@@ -1205,7 +1006,7 @@
                             ></textarea>
                             <button
                                 type="submit"
-                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black font-semibold rounded-lg transition shadow-lg"
+                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black text-sm font-semibold rounded-lg transition shadow-lg"
                             >
                                 Kirim Pesan
                             </button>
@@ -1214,15 +1015,19 @@
                 </div>
 
                 <div
-                    class="border-t border-accent-footer/50 pt-8 text-center text-secondary/50 text-sm"
+                    class="border-t border-accent-footer/50 pt-4 text-center text-secondary/50 text-xs"
                 >
                     <p><strong>&copy; 2025 GoodRaga Indonesia.</strong> All rights reserved.</p>
                 </div>
             </div>
         </footer>
-        <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+        <!-- <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
             <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
-        </div>
-        <script src="./src/js/script-index.js"></script>
+        </div> -->
+        <script src="./src/js/main.js"></script>
+        <script src="./src/js/produk.js"></script>
+        <script src="./src/js/keranjang.js"></script>
+        <script src="./src/js/artikel.js"></script>
+        <script src="./src/js/faq.js"></script>
     </body>
 </html>

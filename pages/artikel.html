@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" href="../src/css/output.css" />
     </head>
-    <body class="bg-neutral-50 text-neutral-900">
+    <body class="bg-bg text-black font-inter antialiased">
         <header
             id="header"
             class="fixed top-0 w-full z-50 transition-all duration-300"
@@ -50,19 +50,19 @@
                 >
                     <ul class="block lg:flex">
                         <li class="listitem-nav">
-                            <a href="#produk" class="anchor-nav">Produk</a>
+                            <a href="./produk.html" class="anchor-nav">Produk</a>
                         </li>
                         <li class="listitem-nav">
-                            <a href="#cerita" class="anchor-nav">Cerita</a>
+                            <a href="./cerita.html" class="anchor-nav">Cerita</a>
                         </li>
                         <li class="listitem-nav">
-                            <a href="#manfaat" class="anchor-nav">Manfaat</a>
+                            <a href="./manfaat.html" class="anchor-nav">Manfaat</a>
                         </li>
                         <li class="listitem-nav">
                             <a href="./artikel.html" class="text-xs md:text-sm text-white font-semibold lg:text-primary">Artikel</a>
                         </li>
                         <li class="listitem-nav">
-                            <a href="#faq" class="anchor-nav">FAQ</a>
+                            <a href="./faq.html" class="anchor-nav">FAQ</a>
                         </li>
                     </ul>
                     <div class="flex justify-center py-1.5 lg:hidden">
@@ -84,24 +84,21 @@
                 </div>
             </div>
         </header>
-        <main>
-            <section id="jurnal" class="py-24 bg-bg">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="space-y-4 mb-10 lg:mb-12 text-center">
-                    <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase">
-                        Ruang <span class="text-emerald-800">Hidup Sehat</span>
-                    </h2>
-                    <p class="text-gray">
-                        Catatan kecil tentang kesehatan, rempah, dan cara menikmati hidup yang lebih seimbang.
-                    </p>
-                </div>
-                
-                <div class="flex flex-wrap justify-center gap-3 mb-8" id="filter-container"></div>
+        <main id="artikel" class="py-24 bg-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="space-y-4 mb-10 lg:mb-12 text-center">
+                <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase">
+                    Ruang <span class="text-emerald-800">Hidup Sehat</span>
+                </h2>
+                <p class="text-gray">
+                    Catatan kecil tentang kesehatan, rempah, dan cara menikmati hidup yang lebih seimbang.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-3 mb-8" id="filter-container"></div>
 
-                <div id="articles-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"></div>
-
-            </section>
+            <div id="articles-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"></div>
         </main>
         <footer class="bg-footer text-white py-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +106,7 @@
                     class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8 lg:mb-12"
                 >
                     <div class="space-y-4 lg:w-[270px]">
-                        <h3 class="text-2xl font-bold">
+                        <h3 class="text-lg font-bold">
                             Good<span class="text-accent-footer">Raga</span>
                         </h3>
                         <p class="text-secondary text-sm leading-relaxed">
@@ -123,7 +120,7 @@
                     </div>
 
                     <div class="">
-                        <h2 class="text-light font-bold text-sm md:text-base mb-4">Tautan Cepat</h2>
+                        <h3 class="text-lg font-bold mb-4">Akses Halaman Utama</h3>
                         <ul class="space-y-1.5 lg:space-y-2.5 text-sm text-secondary">
                             <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="../src/assets/arrow.svg" alt="arrow image" /> <a href="#tentang">Produk</a></li>
                             <li class="flex items-center gap-3 group"><img class="transition-transform duration-200 group-hover:translate-x-1" src="../src/assets/arrow.svg" alt="arrow image" /> <a href="#layanan">Cerita</a></li>
@@ -133,7 +130,7 @@
                     </div>
 
                     <div class="">
-                        <h4 class="font-bold text-lg mb-4">Kontak</h4>
+                        <h3 class="text-lg font-bold mb-4">Kontak</h3>
                         <ul class="space-y-3 text-secondary text-sm">
                             <li class="flex items-center gap-2">
                                 <img src="../src/assets/email.svg" alt="email icon">
@@ -151,9 +148,9 @@
                     </div>
 
                     <div class="w-full lg:w-[300px]">
-                        <h4 class="font-bold text-lg mb-4">
+                        <h3 class="text-lg font-bold mb-4">
                             Dapetin Kabar Sehat
-                        </h4>
+                        </h3>
                         <p class="text-secondary text-sm mb-4">
                             Tips kesehatan, update rasa baru, dan promo khusus
                             member. Nggak bakal nyepam, janji.
@@ -182,9 +179,10 @@
                 </div>
             </div>
         </footer>
-        <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+        <!-- <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
             <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
-        </div>
-        <script src="../src/js/script-index.js"></script>
+        </div> -->
+        <script src="../src/js/main.js"></script>
+        <script src="../src/js/artikel.js"></script>
     </body>
 </html>
