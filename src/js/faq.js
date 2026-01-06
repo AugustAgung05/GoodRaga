@@ -101,7 +101,7 @@ function createFaqItem(item, index) {
                 </svg>
             </span>
         </summary>
-        <div class="px-5 pb-5 text-gray text-sm leading-relaxed border-t border-gray-50 pt-3 space-y-2 animate-fadeIn">
+        <div class="px-5 pb-5 text-gray text-sm leading-relaxed border-t border-gray-50 pt-3 space-y-2 animate-fadeInLittle">
             <p>${item.a}</p>
             ${listHTML}
             ${tipHTML}

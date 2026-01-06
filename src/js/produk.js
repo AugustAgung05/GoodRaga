@@ -308,3 +308,23 @@ const fullProductGrid = document.getElementById("product-grid");
 if (fullProductGrid) {
     fullProductGrid.innerHTML = products.map(createProductCard).join("");
 }
+
+(() => {
+    const revealsProduk = document.querySelectorAll(".reveal-produk");
+    if (!revealsProduk.length) return;
+
+    const observerProduk = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-fadeIn");
+                    entry.target.classList.remove("opacity-0");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.01 }
+    );
+
+    revealsProduk.forEach((el) => observerProduk.observe(el));
+})();
