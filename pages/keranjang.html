@@ -21,7 +21,9 @@
         <link rel="stylesheet" href="../src/css/output.css" />
     </head>
     <body class="bg-bg text-black font-inter antialiased relative">
-        <header class="bg-white/80 backdrop-blur-md border-b border-gray/10 py-4 shadow-sm sticky top-0 z-50">
+        <header
+            class="bg-white/80 backdrop-blur-md border-b border-gray/10 py-4 shadow-sm sticky top-0 z-50"
+        >
             <nav
                 class="max-w-7xl mx-auto px-4 flex justify-between items-center"
             >
@@ -35,10 +37,7 @@
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <g
-                            id="SVGRepo_bgCarrier"
-                            stroke-width="0"
-                        ></g>
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
                             id="SVGRepo_tracerCarrier"
                             stroke-linecap="round"
@@ -54,18 +53,22 @@
                             ></path>
                         </g>
                     </svg>
-                    <span class="font-medium hidden lg:block">Lanjut Belanja</span>
+                    <span class="font-medium hidden lg:block"
+                        >Lanjut Belanja</span
+                    >
                 </a>
-                <h1 class="absolute left-1/2 -translate-x-1/2 font-playfair font-bold text-lg lg:text-xl"
-                    >Keranjang Kamu</h1
+                <h1
+                    class="absolute left-1/2 -translate-x-1/2 font-playfair font-bold text-lg lg:text-xl"
                 >
+                    Keranjang Kamu
+                </h1>
             </nav>
         </header>
 
         <main class="max-w-7xl mx-auto px-4 py-6 w-full">
             <div
                 id="empty-cart"
-                class="hidden flex-col items-center justify-center py-20 text-center"
+                class="hidden flex-col items-center justify-center py-20 text-center reveal opacity-0"
             >
                 <div
                     class="w-32 h-32 bg-gray/10 rounded-full flex items-center justify-center mb-6"
@@ -101,7 +104,7 @@
 
             <div
                 id="cart-content"
-                class="grid grid-cols-1 lg:grid-cols-3 gap-12 hidden"
+                class="grid grid-cols-1 lg:grid-cols-3 gap-12 hidden reveal opacity-0"
             >
                 <div
                     class="lg:col-span-2 space-y-6"
@@ -110,10 +113,10 @@
 
                 <div class="lg:col-span-1">
                     <div
-                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray/10 sticky top-24"
+                        class="bg-white p-5 rounded-2xl shadow-sm border border-gray/10 sticky top-24"
                     >
                         <h3
-                            class="font-playfair font-bold text-xl mb-6 border-b border-b-gray/80 pb-4"
+                            class="font-playfair font-bold text-lg lg:text-xl mb-6 border-b border-b-gray/80 pb-4"
                         >
                             Ringkasan Order
                         </h3>
@@ -134,35 +137,46 @@
                         <div
                             class="flex justify-between items-center border-t border-t-gray/80 pt-4 mb-6"
                         >
-                            <span class="font-bold text-lg">Total Bayar</span>
+                            <span class="font-bold lg:text-lg"
+                                >Total Bayar</span
+                            >
                             <h4
                                 id="total-price"
-                                class="font-bold text-xl text-primary"
-                                >Rp 0</h4
+                                class="font-bold text-lg lg:text-xl text-primary"
                             >
+                                Rp 0
+                            </h4>
                         </div>
 
                         <button
                             onclick="checkoutWA()"
-                            class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-emerald-800 transition shadow-lg flex justify-center items-center gap-2"
+                            class="w-full py-3 bg-primary text-white font-medium rounded-xl hover:bg-emerald-800 transition shadow-lg flex justify-center items-center gap-2 group"
                         >
                             <span>Checkout via WhatsApp</span>
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5"
-                                fill="none"
                                 viewBox="0 0 24 24"
-                                stroke="currentColor"
+                                class="w-6 group-hover:translate-x-1 transition-transform"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
-                                <path
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                />
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M6 12H18M18 12L13 7M18 12L13 17"
+                                        stroke="#ffffff"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </g>
                             </svg>
                         </button>
-                        <p class="text-xs text-center text-gray-400 mt-4">
+                        <p class="text-xs text-center text-gray-400 mt-5">
                             Transaksi aman & langsung terhubung ke admin.
                         </p>
                     </div>
@@ -324,7 +338,6 @@
         <!-- <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
         <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
     </div> -->
-    
         <script src="../src/js/keranjang-content.js"></script>
     </body>
 </html>

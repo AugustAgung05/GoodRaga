@@ -14,7 +14,7 @@ const faqData = [
     {
         q: "Tahan berapa lama di suhu ruang?",
         a: "Karena GoodRaga dibuat 100% alami tanpa pengawet buatan, ketahanannya sangat bergantung pada suhu:",
-        list:[
+        list: [
             "Suhu ruang, tahan maksimal 24 jam (karena rentan fermentasi alami)",
             "Di dalam kulkas (suhu 4°C), tahan 4-7 hari tergantung varian produk",
             "Di freezer, bisa tahan hingga 2-3 minggu",
@@ -28,7 +28,7 @@ const faqData = [
     {
         q: "Kapan waktu terbaik minumnya?",
         a: "Sebenarnya fleksibel, tapi ini rekomendasinya:",
-        list:[
+        list: [
             "Pagi hari (perut kosong), terbaik untuk detoksifikasi dan penyerapan nutrisi maksimal",
             "Siang hari, diminum dingin dengan es batu sangat menyegarkan di cuaca panas",
             "Malam hari (sebelum tidur), cocok untuk varian Jahe/Rempah agar tubuh rileks dan tidur lebih nyenyak",
@@ -61,15 +61,15 @@ const faqData = [
 ];
 
 function createFaqItem(item, index) {
-    const isOpen = index === 0 ? 'open' : '';
+    const isOpen = index === 0 ? "open" : "";
 
-    let listHTML = '';
+    let listHTML = "";
     if (item.list && item.list.length > 0) {
-        const listItems = item.list.map(li => `<li>${li}</li>`).join('');
+        const listItems = item.list.map((li) => `<li>${li}</li>`).join("");
         listHTML = `<ul class="list-disc list-inside space-y-1">${listItems}</ul>`;
     }
 
-    let tipHTML = '';
+    let tipHTML = "";
     if (item.tip) {
         tipHTML = `
         <div class="inline-flex text-sm text-primary font-medium bg-secondary p-3 rounded-lg border border-secondary/50 mt-1">
@@ -113,10 +113,14 @@ function createFaqItem(item, index) {
 const homeContainer = document.getElementById("home-faq-container");
 if (homeContainer) {
     const topQuestions = faqData.slice(0, 4);
-    homeContainer.innerHTML = topQuestions.map((item, index) => createFaqItem(item, index)).join("");
+    homeContainer.innerHTML = topQuestions
+        .map((item, index) => createFaqItem(item, index))
+        .join("");
 }
 
 const fullContainer = document.getElementById("faq-container");
 if (fullContainer) {
-    fullContainer.innerHTML = faqData.map((item, index) => createFaqItem(item, index)).join("");
+    fullContainer.innerHTML = faqData
+        .map((item, index) => createFaqItem(item, index))
+        .join("");
 }

@@ -2,82 +2,82 @@ const articles = [
     {
         id: 1,
         category: "Tips Sehat",
-        title: "Mengenal \"Ibu Kunyit\" vs Kunyit Biasa",
+        title: 'Mengenal "Ibu Kunyit" vs Kunyit Biasa',
         desc: "Apa bedanya, dan kenapa kami memilih biang kunyit untukmu.",
-        image: "./src/assets/tips-sehat-1.webp"
+        image: "./src/assets/tips-sehat-1.webp",
     },
     {
         id: 2,
         category: "Gaya Hidup",
         title: "Revenge Bedtime Procrastination",
         desc: "Kenapa kita sengaja menunda tidur padahal badan sudah lelah? Fenomena ini lebih umum dari yang kamu kira.",
-        image: "./src/assets/gaya-hidup-1.webp"
+        image: "./src/assets/gaya-hidup-1.webp",
     },
     {
         id: 3,
         category: "Produktivitas",
-        title: "Teknik \"Micro-Break\" untuk Atasi Brain Fog Sore Hari",
+        title: 'Teknik "Micro-Break" untuk Atasi Brain Fog Sore Hari',
         desc: "Produktivitas bukan soal kerja nonstop. Pelajari cara 'reset' otak dalam 5 menit agar performa tetap stabil sampai jam pulang.",
-        image: "./src/assets/produktivitas-2.webp"
+        image: "./src/assets/produktivitas-2.webp",
     },
     {
         id: 4,
         category: "Tips Sehat",
         title: "Olahraga Saat PMS: Bolehkah?",
         desc: "Gerakan ringan yang justru membantu meredakan kram perut.",
-        image: "./src/assets/tips-sehat-2.webp"
+        image: "./src/assets/tips-sehat-2.webp",
     },
     {
         id: 5,
         category: "Tips Sehat",
         title: "Masuk Angin Karena AC Kantor? Ini Triknya.",
         desc: "Jangan biarkan suhu dingin menurunkan performa kerjamu.",
-        image: "./src/assets/tips-sehat-3.webp"
+        image: "./src/assets/tips-sehat-3.webp",
     },
     {
         id: 6,
         category: "Resep",
         title: "DIY Mocktail: Kunyit Asam Sparkle",
         desc: "Minuman segar ala café yang bisa kamu buat di rumah—cukup botol GoodRaga dan soda dingin.",
-        image: "./src/assets/resep-1.webp"
+        image: "./src/assets/resep-1.webp",
     },
     {
         id: 7,
         category: "Tips Sehat",
         title: "Mitos Gula Aren vs Gula Pasir",
         desc: "Benarkah gula aren lebih sehat untuk diabetes? Cek faktanya di sini.",
-        image: "./src/assets/tips-sehat-4.webp"
+        image: "./src/assets/tips-sehat-4.webp",
     },
     {
         id: 8,
         category: "Resep",
         title: "Warm Hug: Wedang Jahe Susu Oat",
         desc: "Resep hangat, creamy, dan dairy-free untuk menemani sore hujan tanpa rasa bersalah.",
-        image: "./src/assets/resep-2.webp"
+        image: "./src/assets/resep-2.webp",
     },
     {
         id: 9,
         category: "Produktivitas",
         title: "Ritual 10 Menit Pagi Biar Fokus Seharian",
         desc: "Bukan scroll HP. Mulai hari dengan kebiasaan kecil yang memberi 'win' pertama.",
-        image: "./src/assets/produktivitas-1.webp"
-    }
+        image: "./src/assets/produktivitas-1.webp",
+    },
 ];
 
 function resolveImagePath(originalPath) {
-    const isInPagesFolder = window.location.pathname.includes('/pages/');
+    const isInPagesFolder = window.location.pathname.includes("/pages/");
 
     if (isInPagesFolder) {
-        return originalPath.replace('./', '../');
+        return originalPath.replace("./", "../");
     }
-    
+
     return originalPath;
 }
 
 function generateCardHTML(article, index) {
     const shouldEagerLoad = index < 3;
-    const loadingMode = shouldEagerLoad ? 'eager' : 'lazy';
-    const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
+    const loadingMode = shouldEagerLoad ? "eager" : "lazy";
+    const priorityAttr = index === 0 ? 'fetchpriority="high"' : "";
 
     const finalImagePath = resolveImagePath(article.image);
 
@@ -111,44 +111,56 @@ function generateCardHTML(article, index) {
     `;
 }
 
-const homeGrid = document.getElementById('home-articles-grid');
+const homeGrid = document.getElementById("home-articles-grid");
 
 if (homeGrid) {
     const top3Articles = articles.slice(0, 3);
-    homeGrid.innerHTML = top3Articles.map((article, index) => generateCardHTML(article, index)).join('');
+    homeGrid.innerHTML = top3Articles
+        .map((article, index) => generateCardHTML(article, index))
+        .join("");
 }
 
-const journalGrid = document.getElementById('articles-grid');
-const filterContainer = document.getElementById('filter-container');
+const journalGrid = document.getElementById("articles-grid");
+const filterContainer = document.getElementById("filter-container");
 
 if (journalGrid && filterContainer) {
-    const categories = ["Semua", ...new Set(articles.map(item => item.category))];
+    const categories = [
+        "Semua",
+        ...new Set(articles.map((item) => item.category)),
+    ];
     let activeCategory = "Semua";
 
     function renderButtons() {
-        filterContainer.innerHTML = categories.map(cat => `
+        filterContainer.innerHTML = categories
+            .map(
+                (cat) => `
             <button 
                 onclick="filterArticles('${cat}')"
                 class="px-6 py-2 rounded-full text-xs whitespace-nowrap font-medium transition-all duration-300 ${
-                    activeCategory === cat 
-                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' 
-                    : 'bg-gray/10 text-gray border-transparent hover:bg-gray/20'
+                    activeCategory === cat
+                        ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
+                        : "bg-gray/10 text-gray border-transparent hover:bg-gray/20"
                 }"
             >
                 ${cat}
             </button>
-        `).join('');
+        `
+            )
+            .join("");
     }
 
     function renderJournalArticles() {
-        const filteredData = activeCategory === "Semua" 
-            ? articles 
-            : articles.filter(item => item.category === activeCategory);
-        
-        journalGrid.innerHTML = filteredData.map((article, index) => generateCardHTML(article, index)).join('');
+        const filteredData =
+            activeCategory === "Semua"
+                ? articles
+                : articles.filter((item) => item.category === activeCategory);
+
+        journalGrid.innerHTML = filteredData
+            .map((article, index) => generateCardHTML(article, index))
+            .join("");
     }
 
-    window.filterArticles = function(category) {
+    window.filterArticles = function (category) {
         activeCategory = category;
         renderButtons();
         renderJournalArticles();

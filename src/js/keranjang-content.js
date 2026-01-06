@@ -35,12 +35,12 @@ function renderCart() {
         }" class="w-full h-full object-cover">
                     </div>
 
-                    <div class="flex-grow text-center sm:text-left">
-                        <h4 class="font-playfair font-bold text-lg text-primary">${
+                    <div class="flex-grow text-center sm:text-left space-y-1.5">
+                        <h4 class="font-playfair font-bold text-base md:text-lg text-primary">${
                             item.name
                         }</h4>
                         <p class="text-sm text-gray/80">Kemasan Botol 250ml</p>
-                        <p class="text-primary font-bold mt-1">Rp ${item.price.toLocaleString(
+                        <p class="text-primary font-bold"><span class="text-xs">Rp </span>${item.price.toLocaleString(
                             "id-ID"
                         )}</p>
                     </div>
@@ -63,8 +63,12 @@ function renderCart() {
         container.innerHTML += html;
     });
 
-    subtotalEl.innerHTML = `<span class="text-xs">Rp </span>${totalAmount.toLocaleString("id-ID")}`;
-    totalEl.innerHTML = `<span class="text-sm">Rp </span>${totalAmount.toLocaleString("id-ID")}`;
+    subtotalEl.innerHTML = `<span class="text-xs">Rp </span>${totalAmount.toLocaleString(
+        "id-ID"
+    )}`;
+    totalEl.innerHTML = `<span class="text-sm">Rp </span>${totalAmount.toLocaleString(
+        "id-ID"
+    )}`;
 }
 
 function confirmDelete(callback) {
@@ -80,8 +84,10 @@ function confirmDelete(callback) {
         customClass: {
             popup: "rounded-2xl",
             actions: "swal-actions-gap",
-            confirmButton: "bg-red-600 px-5 py-2 rounded-lg text-white text-sm md:text-base",
-            cancelButton: "bg-gray/10 px-5 py-2 rounded-lg text-gray text-sm md:text-base",
+            confirmButton:
+                "bg-red-600 px-5 py-2 rounded-lg text-white text-sm md:text-base",
+            cancelButton:
+                "bg-gray/10 px-5 py-2 rounded-lg text-gray text-sm md:text-base",
         },
         buttonsStyling: false,
     }).then((result) => {
@@ -96,17 +102,17 @@ function updateQty(index, change) {
         cart[index].quantity += change;
     } else {
         confirmDelete(() => {
-        cart.splice(index, 1);
-        saveAndRender();
+            cart.splice(index, 1);
+            saveAndRender();
 
-        Swal.fire({
-            icon: "success",
-            title: "Dihapus",
-            text: "Produk berhasil dihapus dari keranjang.",
-            timer: 1500,
-            showConfirmButton: false,
+            Swal.fire({
+                icon: "success",
+                title: "Dihapus",
+                text: "Produk berhasil dihapus dari keranjang.",
+                timer: 1500,
+                showConfirmButton: false,
+            });
         });
-    });
     }
     saveAndRender();
 }
@@ -153,3 +159,23 @@ function checkoutWA() {
 }
 
 renderCart();
+
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fadeIn");
+                entry.target.classList.remove("opacity-0");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.1,
+    }
+);
+
+reveals.forEach((element) => {
+    observer.observe(element);
+});

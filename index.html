@@ -95,7 +95,7 @@
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center"
                 >
-                    <div class="space-y-4">
+                    <div class="space-y-4 reveal opacity-0">
                         <div
                             class="inline-flex items-center space-x-2 bg-white px-3 py-1.5 rounded-full shadow-xs"
                         >
@@ -162,7 +162,7 @@
                     </div>
 
                     <div
-                        class="relative mx-auto transform rotate-2 hover:rotate-0 transition duration-500"
+                        class="relative mx-auto transform rotate-2 hover:rotate-0 transition duration-500 reveal opacity-0"
                     >
                         <img
                             src="./src/assets/hero.webp"
@@ -179,7 +179,7 @@
             </div>
         </section>
 
-        <section id="produk" class="py-18 lg:py-24 bg-bg scroll-mt-6">
+        <section id="produk" class="py-18 lg:py-24 bg-bg scroll-mt-6 reveal opacity-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="space-y-4 mb-10 lg:mb-12 text-center">
                     <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase leading-relaxed">
@@ -225,10 +225,10 @@
             </div>
         </section>
 
-        <section id="cerita" class="py-18 lg:py-24 relative overflow-hidden scroll-mt-6">
+        <section id="cerita" class="py-18 lg:py-24 relative overflow-hidden scroll-mt-6 reveal opacity-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
-                    class="absolute bottom-0 right-0 md:left-0 w-40 h-40 lg:w-58 lg:h-58 bg-orange-100 rounded-full blur-xl opacity-60 z-[-99]"
+                    class="absolute bottom-15 right-0 md:left-0 w-40 h-40 lg:w-58 lg:h-58 bg-orange-100 cursor-none animate-blur-bg rounded-full blur-xl opacity-60 z-[-99]"
                 ></div>
                 <h2
                     class="text-center text-2xl md:text-3xl xl:text-4xl font-playfair font-bold text-black uppercase leading-relaxed mb-10 lg:mb-12"
@@ -280,7 +280,7 @@
                         </div>
 
                         <a
-                            href="story_detail.html"
+                            href="./pages/cerita.html"
                             class="flex xs:inline-flex gap-2 items-center justify-center text-sm lg:text-base px-7 py-3 lg:px-8 border border-primary font-medium rounded-full text-primary hover:bg-primary hover:text-white transition duration-300 group"
                         >
                             Baca perjalanan kami
@@ -323,7 +323,7 @@
 
         <section
             id="manfaat"
-            class="relative py-24 my-18 lg:my-24 text-bg overflow-hidden scroll-mt-20"
+            class="relative py-24 my-18 lg:my-24 text-bg overflow-hidden scroll-mt-20 reveal opacity-0"
             >
             <img
                 src="./src/assets/manfaat.webp"
@@ -344,7 +344,7 @@
                 </p>
 
                 <a
-                href="#"
+                href="./pages/manfaat.html"
                 class="flex xs:inline-flex gap-2 items-center justify-center text-sm lg:text-base px-7 py-3 lg:px-8 border border-accent font-medium rounded-full text-accent hover:bg-[#8FB36D] hover:border-[#8FB36D] hover:text-white transition duration-300 group mt-8"
                 >
                 Lihat pustaka bahan
@@ -366,7 +366,7 @@
             </div>
         </section>
 
-        <section id="artikel" class="py-18 lg:py-24 bg-bg scroll-mt-6">
+        <section id="artikel" class="py-18 lg:py-24 scroll-mt-6 reveal opacity-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="space-y-4 mb-10 lg:mb-12 text-center">
@@ -412,7 +412,7 @@
                 </div>
         </section>
 
-        <section id="faq" class="py-18 lg:py-24 bg-bg scroll-mt-6">
+        <section id="faq" class="py-18 lg:py-24 scroll-mt-6 reveal opacity-0">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="space-y-4 text-center mb-10 lg:mb-12">
                     <h2 class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase leading-relaxed">
@@ -482,19 +482,19 @@
                             <a href="https://wa.me/6285778208790"
                                 ><img
                                     class="w-7 h-7 lg:w-6 lg:h-6 transition-transform duration-150 hover:scale-110"
-                                    src="../src/assets/whatsapp.svg"
+                                    src="./src/assets/whatsapp.svg"
                                     alt="whatsapp logo"
                             /></a>
                             <a href="https://www.instagram.com/anandast.05/"
                                 ><img
                                     class="w-[26px] h-[26px] lg:w-[22px] lg:h-[22px] transition-transform duration-150 hover:scale-110"
-                                    src="../src/assets/instagram.svg"
+                                    src="./src/assets/instagram.svg"
                                     alt="instagram logo"
                             /></a>
                             <a href=""
                                 ><img
                                     class="w-[30px] h-[30px] lg:w-[26px] lg:h-[26px] transition-transform duration-150 hover:scale-110"
-                                    src="../src/assets/tiktok.svg"
+                                    src="./src/assets/tiktok.svg"
                                     alt="tiktok logo"
                             /></a>
                         </div>
@@ -612,9 +612,9 @@
                 </div>
             </div>
         </footer>
-        <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+        <!-- <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
             <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
-        </div>
+        </div> -->
         <script src="./src/js/keranjang.js"></script>
         <script src="./src/js/main.js"></script>
         <script src="./src/js/produk.js"></script>

@@ -33,8 +33,9 @@ window.addEventListener("resize", () => {
 function handleScroll() {
     const isScrolled = window.scrollY > 5;
 
-    const isSpecialPage = document.body.classList.contains('header-hidden-init');
-    
+    const isSpecialPage =
+        document.body.classList.contains("header-hidden-init");
+
     if (isScrolled) {
         header.classList.add("bg-white/80", "backdrop-blur-md", "shadow-sm");
         header.classList.remove("border-transparent");
@@ -45,12 +46,24 @@ function handleScroll() {
 
     if (isSpecialPage) {
         if (isScrolled) {
-            header.classList.remove("opacity-0", "-translate-y-full", "pointer-events-none");
+            header.classList.remove(
+                "opacity-0",
+                "-translate-y-full",
+                "pointer-events-none"
+            );
         } else {
-            header.classList.add("opacity-0", "-translate-y-full", "pointer-events-none");
+            header.classList.add(
+                "opacity-0",
+                "-translate-y-full",
+                "pointer-events-none"
+            );
         }
     } else {
-        header.classList.remove("opacity-0", "-translate-y-full", "pointer-events-none");
+        header.classList.remove(
+            "opacity-0",
+            "-translate-y-full",
+            "pointer-events-none"
+        );
     }
 }
 
@@ -106,4 +119,24 @@ document.getElementById("waForm").addEventListener("submit", function (e) {
     window.open(waUrl, "_blank", "noopener,noreferrer");
 
     document.getElementById("waMessage").value = "";
+});
+
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fadeIn");
+                entry.target.classList.remove("opacity-0");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.1,
+    }
+);
+
+reveals.forEach((element) => {
+    observer.observe(element);
 });
