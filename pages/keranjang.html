@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Keranjang Belanja - GoodRaga</title>
+        <title>Keranjang Belanja - GoodRaga</title>
         <link rel="icon" href="../public/goodraga-logo.png" type="image/png" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -16,99 +16,165 @@
             href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"
         />
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <link rel="stylesheet" href="../src/css/output.css" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        goodraga: {
-                            cream: '#F9F7F2',
-                            green: '#064E3B',
-                            accent: '#10B981',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-goodraga-cream text-goodraga-green font-sans antialiased min-h-screen flex flex-col">
+    </head>
+    <body class="bg-bg text-black font-inter antialiased relative">
+        <header class="bg-white/80 backdrop-blur-md border-b border-gray/10 py-4 shadow-sm sticky top-0 z-50">
+            <nav
+                class="max-w-7xl mx-auto px-4 flex justify-between items-center"
+            >
+                <a
+                    href="../index.html"
+                    class="flex items-center gap-2 text-primary transition group"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        class="w-6 group-hover:-translate-x-1 transition-transform rotate-180"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g
+                            id="SVGRepo_bgCarrier"
+                            stroke-width="0"
+                        ></g>
+                        <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M6 12H18M18 12L13 7M18 12L13 17"
+                                stroke="#008357"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </g>
+                    </svg>
+                    <span class="font-medium hidden lg:block">Lanjut Belanja</span>
+                </a>
+                <h1 class="absolute left-1/2 -translate-x-1/2 font-playfair font-bold text-lg lg:text-xl"
+                    >Keranjang Kamu</h1
+                >
+            </nav>
+        </header>
 
-    <nav class="bg-white border-b border-gray-100 py-4 shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <a href="../index.html" class="flex items-center gap-2 text-goodraga-green hover:text-goodraga-accent transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <span class="font-medium">Lanjut Belanja</span>
-            </a>
-            <span class="font-serif font-bold text-xl tracking-tight">Keranjang Kamu</span>
-            <div class="w-20"></div> </div>
-    </nav>
-
-    <main class="grow max-w-7xl mx-auto px-4 py-10 w-full">
-        
-        <div id="empty-cart" class="hidden flex-col items-center justify-center py-20 text-center">
-            <div class="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-            </div>
-            <h2 class="text-2xl font-serif font-bold text-gray-800 mb-2">Keranjang masih kosong, nih.</h2>
-            <p class="text-gray-500 mb-8">Yuk isi dengan yang segar-segar buat imun kamu.</p>
-            <a href="index.html#produk" class="px-8 py-3 bg-goodraga-green text-white rounded-full font-medium hover:bg-emerald-800 transition shadow-lg">
-                Mulai Belanja
-            </a>
-        </div>
-
-        <div id="cart-content" class="grid grid-cols-1 lg:grid-cols-3 gap-12 hidden">
-            
-            <div class="lg:col-span-2 space-y-6" id="cart-items-container">
+        <main class="max-w-7xl mx-auto px-4 py-6 w-full">
+            <div
+                id="empty-cart"
+                class="hidden flex-col items-center justify-center py-20 text-center"
+            >
+                <div
+                    class="w-32 h-32 bg-gray/10 rounded-full flex items-center justify-center mb-6"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-12 w-12 text-gray"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                        />
+                    </svg>
                 </div>
-
-            <div class="lg:col-span-1">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-24">
-                    <h3 class="font-serif font-bold text-xl mb-6 border-b pb-4">Ringkasan Order</h3>
-                    
-                    <div class="space-y-3 text-sm text-gray-600 mb-6">
-                        <div class="flex justify-between">
-                            <span>Total Harga</span>
-                            <span id="subtotal" class="font-medium">Rp 0</span>
-                        </div>
-                        <div class="flex justify-between text-green-600">
-                            <span>Diskon</span>
-                            <span>-</span>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center border-t pt-4 mb-6">
-                        <span class="font-bold text-lg">Total Bayar</span>
-                        <span id="total-price" class="font-bold text-xl text-goodraga-green">Rp 0</span>
-                    </div>
-
-                    <button onclick="checkoutWA()" class="w-full py-4 bg-goodraga-green text-white font-bold rounded-xl hover:bg-emerald-800 transition shadow-lg flex justify-center items-center gap-2">
-                        <span>Checkout via WhatsApp</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
-                    <p class="text-xs text-center text-gray-400 mt-4">Transaksi aman & langsung terhubung ke admin.</p>
-                </div>
+                <h2 class="text-2xl font-playfair font-bold text-black mb-2">
+                    Keranjang masih kosong, nih.
+                </h2>
+                <p class="text-gray mb-8">
+                    Yuk isi dengan yang segar-segar buat imun kamu.
+                </p>
+                <a
+                    href="./produk.html"
+                    class="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-emerald-800 transition shadow-lg"
+                >
+                    Mulai Belanja
+                </a>
             </div>
 
-        </div>
-    </main>
-    <footer class="bg-footer text-white py-8">
+            <div
+                id="cart-content"
+                class="grid grid-cols-1 lg:grid-cols-3 gap-12 hidden"
+            >
+                <div
+                    class="lg:col-span-2 space-y-6"
+                    id="cart-items-container"
+                ></div>
+
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray/10 sticky top-24"
+                    >
+                        <h3
+                            class="font-playfair font-bold text-xl mb-6 border-b border-b-gray/80 pb-4"
+                        >
+                            Ringkasan Order
+                        </h3>
+
+                        <div class="space-y-3 text-gray-600 mb-6">
+                            <div class="flex justify-between">
+                                <span>Total Harga</span>
+                                <span id="subtotal" class="font-medium"
+                                    >Rp 0</span
+                                >
+                            </div>
+                            <div class="flex justify-between text-green-600">
+                                <span>Diskon</span>
+                                <span>-</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-between items-center border-t border-t-gray/80 pt-4 mb-6"
+                        >
+                            <span class="font-bold text-lg">Total Bayar</span>
+                            <h4
+                                id="total-price"
+                                class="font-bold text-xl text-primary"
+                                >Rp 0</h4
+                            >
+                        </div>
+
+                        <button
+                            onclick="checkoutWA()"
+                            class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-emerald-800 transition shadow-lg flex justify-center items-center gap-2"
+                        >
+                            <span>Checkout via WhatsApp</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                />
+                            </svg>
+                        </button>
+                        <p class="text-xs text-center text-gray-400 mt-4">
+                            Transaksi aman & langsung terhubung ke admin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-footer text-white pt-8 pb-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
                     class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8 lg:mb-12"
                 >
-                    <div class="space-y-4 lg:w-[270px]">
+                    <div class="space-y-4 lg:w-[260px] xl:w-[270px]">
                         <h3 class="text-lg font-bold">
                             Good<span class="text-accent-footer">Raga</span>
                         </h3>
@@ -122,23 +188,23 @@
                             >
                         </p>
                         <div
-                            class="mt-6 justify-center lg:justify-start flex gap-5 lg:gap-7"
+                            class="mt-6 justify-center lg:justify-start items-center flex gap-6 lg:gap-7"
                         >
                             <a href="https://wa.me/6285778208790"
                                 ><img
-                                    class="transition-transform duration-150 hover:scale-110"
+                                    class="w-7 h-7 lg:w-6 lg:h-6 transition-transform duration-150 hover:scale-110"
                                     src="../src/assets/whatsapp.svg"
                                     alt="whatsapp logo"
                             /></a>
                             <a href="https://www.instagram.com/anandast.05/"
                                 ><img
-                                    class="transition-transform duration-150 hover:scale-110"
+                                    class="w-[26px] h-[26px] lg:w-[22px] lg:h-[22px] transition-transform duration-150 hover:scale-110"
                                     src="../src/assets/instagram.svg"
                                     alt="instagram logo"
                             /></a>
                             <a href=""
                                 ><img
-                                    class="transition-transform duration-150 hover:scale-110"
+                                    class="w-[30px] h-[30px] lg:w-[26px] lg:h-[26px] transition-transform duration-150 hover:scale-110"
                                     src="../src/assets/tiktok.svg"
                                     alt="tiktok logo"
                             /></a>
@@ -146,9 +212,7 @@
                     </div>
 
                     <div class="">
-                        <h3 class="text-lg font-bold mb-4">
-                            Akses Halaman Utama
-                        </h3>
+                        <h3 class="text-lg font-bold mb-4">Halaman Utama</h3>
                         <ul
                             class="space-y-1.5 lg:space-y-2.5 text-sm text-secondary"
                         >
@@ -222,7 +286,7 @@
                         </ul>
                     </div>
 
-                    <div class="w-full lg:w-[300px]">
+                    <div class="w-full lg:w-[280px] xl:w-[300px]">
                         <h3 class="text-lg font-bold mb-4">
                             Dapetin Kabar Sehat
                         </h3>
@@ -239,7 +303,7 @@
                             ></textarea>
                             <button
                                 type="submit"
-                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black font-semibold rounded-lg transition shadow-lg"
+                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black font-semibold text-sm rounded-lg transition shadow-lg"
                             >
                                 Kirim Pesan
                             </button>
@@ -248,7 +312,7 @@
                 </div>
 
                 <div
-                    class="border-t border-accent-footer/50 pt-8 text-center text-secondary/50 text-sm"
+                    class="border-t border-accent-footer/50 pt-6 text-center text-secondary/50 text-sm"
                 >
                     <p>
                         <strong>&copy; 2025 GoodRaga Indonesia.</strong> All
@@ -257,113 +321,10 @@
                 </div>
             </div>
         </footer>
-    <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+        <!-- <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
         <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
-    </div>
-    <script>
-        let cart = JSON.parse(localStorage.getItem('goodraga_cart')) || [];
-        const container = document.getElementById('cart-items-container');
-        const emptyState = document.getElementById('empty-cart');
-        const cartContent = document.getElementById('cart-content');
-        
-        const subtotalEl = document.getElementById('subtotal');
-        const totalEl = document.getElementById('total-price');
-
-        function renderCart() {
-            container.innerHTML = '';
-
-            if (cart.length === 0) {
-                emptyState.classList.remove('hidden');
-                emptyState.classList.add('flex');
-                cartContent.classList.add('hidden');
-                return;
-            }
-
-            emptyState.classList.add('hidden');
-            emptyState.classList.remove('flex');
-            cartContent.classList.remove('hidden');
-
-            let totalAmount = 0;
-
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.quantity;
-                totalAmount += itemTotal;
-
-                const html = `
-                <div class="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm transition hover:shadow-md">
-                    <div class="w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
-                    </div>
-
-                    <div class="flex-grow text-center sm:text-left">
-                        <h4 class="font-serif font-bold text-lg text-goodraga-green">${item.name}</h4>
-                        <p class="text-sm text-gray-500">Kemasan Botol 250ml</p>
-                        <p class="text-goodraga-accent font-bold mt-1">Rp ${item.price.toLocaleString('id-ID')}</p>
-                    </div>
-
-                    <div class="flex items-center bg-gray-50 rounded-full px-2 py-1 border border-gray-200">
-                        <button onclick="updateQty(${index}, -1)" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-goodraga-green font-bold text-lg">-</button>
-                        <span class="w-8 text-center font-medium text-gray-700">${item.quantity}</span>
-                        <button onclick="updateQty(${index}, 1)" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-goodraga-green font-bold text-lg">+</button>
-                    </div>
-
-                    <button onclick="removeItem(${index})" class="p-2 text-gray-300 hover:text-red-500 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                        </svg>
-                    </button>
-                </div>
-                `;
-                container.innerHTML += html;
-            });
-
-            subtotalEl.innerText = `Rp ${totalAmount.toLocaleString('id-ID')}`;
-            totalEl.innerText = `Rp ${totalAmount.toLocaleString('id-ID')}`;
-        }
-
-        function updateQty(index, change) {
-            if (cart[index].quantity + change > 0) {
-                cart[index].quantity += change;
-            } else {
-                if(confirm('Hapus produk ini?')) {
-                    cart.splice(index, 1);
-                }
-            }
-            saveAndRender();
-        }
-
-        function removeItem(index) {
-            if(confirm('Yakin ingin menghapus produk ini?')) {
-                cart.splice(index, 1);
-                saveAndRender();
-            }
-        }
-
-        function saveAndRender() {
-            localStorage.setItem('goodraga_cart', JSON.stringify(cart));
-            renderCart();
-        }
-
-        function checkoutWA() {
-            if (cart.length === 0) return;
-
-            const phoneNumber = "6285778208790";
-            let message = "Halo GoodRaga, saya mau pesan:%0A%0A";
-            let total = 0;
-
-            cart.forEach((item, i) => {
-                const sub = item.price * item.quantity;
-                total += sub;
-                message += `${i+1}. ${item.name} (${item.quantity}x) - Rp ${sub.toLocaleString('id-ID')}%0A`;
-            });
-
-            message += `%0A*Total: Rp ${total.toLocaleString('id-ID')}*%0A`;
-            message += "%0AMohon info ongkir ke alamat saya ya. Terima kasih!";
-
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-        }
-
-        renderCart();
-    </script>
-</body>
+    </div> -->
+    
+        <script src="../src/js/keranjang-content.js"></script>
+    </body>
 </html>
