@@ -81,7 +81,7 @@ function createFaqItem(item, index) {
     return `
     <details ${isOpen} class="group bg-white rounded-xl transition-all duration-300 hover:shadow-md shadow-sm">
         <summary class="flex justify-between items-center cursor-pointer p-5 list-none">
-            <h4 class="font-semibold text-base leading-relaxed text-black group-hover:text-primary transition-colors">
+            <h4 class="font-semibold pr-4 text-base leading-relaxed text-black group-hover:text-primary transition-colors">
                 ${item.q}
             </h4>
             <span class="transition duration-300 group-open:rotate-180">
