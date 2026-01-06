@@ -1,114 +1,356 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manfaat — RasaRamu</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="bg-neutral-50 text-neutral-900 transition-colors duration-300">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Manfaat — GoodRaga</title>
+        <link rel="icon" href="../public/goodraga-logo.png" type="image/png" />
 
-<!-- NAVIGATION (GLOBAL) -->
-<header class="sticky top-0 z-40 bg-white/70 backdrop-blur-md border-b border-neutral-200">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="../index.html" class="text-xl font-black tracking-tight">
-      Rasa<span class="text-emerald-600">Ramu</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href="./produk.html" class="relative group">Produk<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full"></span></a>
-      <a href="./cerita.html" class="relative group">Cerita<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full"></span></a>
-      <a href="./manfaat.html" class="relative group text-emerald-600 font-semibold">Manfaat<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full"></span></a>
-      <a href="./artikel.html" class="relative group">Journal<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full"></span></a>
-      <a href="./faq.html" class="relative group">FAQ<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full"></span></a>
-    </nav>
-  </div>
-</header>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<!-- HERO -->
-<section class="py-28 reveal">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <p class="text-sm uppercase tracking-widest text-emerald-600 mb-3">Bukan klaim kosong</p>
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">Manfaat yang bisa kamu rasakan</h1>
-    <p class="text-neutral-600">Kami jelaskan secara masuk akal, tanpa janji berlebihan.</p>
-  </div>
-</section>
+        <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
 
-<!-- BENEFITS GRID -->
-<section class="pb-32">
-  <div class="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"
+        />
 
-    <div class="bg-white rounded-2xl p-6 shadow reveal">
-      <h3 class="font-semibold text-lg mb-2">⚡ Energi Lebih Stabil</h3>
-      <p class="text-sm text-neutral-600">Bukan energi meledak-ledak seperti kopi, tapi fokus yang lebih tahan lama untuk kerja dan aktivitas harian.</p>
-    </div>
+        <link rel="stylesheet" href="../src/css/output.css" />
+    </head>
+    <body
+        class="bg-bg text-black font-inter antialiased transition-colors duration-300 header-hidden-init"
+    >
+        <header
+            id="header"
+            class="fixed top-0 w-full z-50 transition-all duration-300"
+        >
+            <div
+                class="max-w-7xl mx-auto px-5 md:px-7 py-5 lg:py-3 flex items-center justify-between"
+            >
+                <a href="../index.html" class="flex items-center gap-2">
+                    <img
+                        src="../src/assets/goodraga-logo.webp"
+                        alt="GoodRaga Logo"
+                        class="w-10 h-10 object-contain"
+                    />
+                    <p
+                        class="font-inter font-bold text-base md:text-lg xl:text-xl text-light"
+                    >
+                        Good<span class="text-emerald-800">Raga</span>
+                    </p>
+                </a>
 
-    <div class="bg-white rounded-2xl p-6 shadow reveal">
-      <h3 class="font-semibold text-lg mb-2">🛡️ Dukung Daya Tahan Tubuh</h3>
-      <p class="text-sm text-neutral-600">Rempah alami membantu tubuh beradaptasi dengan ritme hidup yang cepat dan padat.</p>
-    </div>
+                <button
+                    id="menuToggle"
+                    class="block lg:hidden"
+                    aria-label="Toggle Menu"
+                >
+                    <span
+                        class="hamburger-menu duration-300 origin-top-left"
+                    ></span>
+                    <span class="hamburger-menu duration-300 my-1.5"></span>
+                    <span
+                        class="hamburger-menu duration-300 origin-bottom-left"
+                    ></span>
+                </button>
 
-    <div class="bg-white rounded-2xl p-6 shadow reveal">
-      <h3 class="font-semibold text-lg mb-2">🧠 Lebih Tenang & Fokus</h3>
-      <p class="text-sm text-neutral-600">Beberapa varian membantu menenangkan pikiran tanpa efek mengantuk berlebihan.</p>
-    </div>
+                <nav id="menu" class="hidden lg:flex navbar-fixed">
+                    <ul class="block lg:flex">
+                        <li class="listitem-nav">
+                            <a href="./produk.html" class="anchor-nav"
+                                >Produk</a
+                            >
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="./cerita.html" class="anchor-nav"
+                                >Cerita</a
+                            >
+                        </li>
+                        <li class="listitem-nav">
+                            <a
+                                href="./manfaat.html"
+                                class="text-xs md:text-sm text-white font-semibold lg:text-primary"
+                                >Manfaat</a
+                            >
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="./artikel.html" class="anchor-nav"
+                                >Artikel</a
+                            >
+                        </li>
+                        <li class="listitem-nav">
+                            <a href="./faq.html" class="anchor-nav">FAQ</a>
+                        </li>
+                    </ul>
+                    <div class="flex justify-center py-1.5 lg:hidden">
+                        <a
+                            href="keranjang.html"
+                            class="relative hover:text-primary group text-white lg:text-black"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                />
+                            </svg>
+                            <span
+                                class="absolute -top-2 -right-2 bg-red-500 group-hover:bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full increment"
+                                >0</span
+                            >
+                        </a>
+                    </div>
+                </nav>
+                <div class="hidden lg:flex justify-center dekstopIcon">
+                    <a
+                        href="./keranjang.html"
+                        class="relative hover:text-primary group text-white lg:text-black"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                            />
+                        </svg>
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 group-hover:bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full increment"
+                            >0</span
+                        >
+                    </a>
+                </div>
+            </div>
+        </header>
 
-    <div class="bg-white rounded-2xl p-6 shadow reveal">
-      <h3 class="font-semibold text-lg mb-2">😴 Bantu Kualitas Tidur</h3>
-      <p class="text-sm text-neutral-600">Cocok diminum malam hari untuk membantu tubuh masuk ke fase istirahat alami.</p>
-    </div>
+        <section
+            class="relative h-screen flex items-center justify-center overflow-hidden"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="../src/assets/manfaat-hero.webp"
+                    alt="Herbs Background"
+                    class="w-full h-full object-cover animate-zoomOut"
+                />
+                <div class="absolute inset-0 bg-black/60"></div>
+            </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow reveal">
-      <h3 class="font-semibold text-lg mb-2">🍃 Lebih Ramah di Lambung</h3>
-      <p class="text-sm text-neutral-600">Diracik tanpa bahan keras, sehingga lebih bersahabat untuk lambung sensitif.</p>
-    </div>
+            <div class="relative z-10 text-center px-6 max-w-4xl mt-10">
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight"
+                >
+                    BUKAN SIHIR.
+                    <span class="text-accent">INI SAINS ALAM.</span>
+                </h1>
+                <p
+                    class="text-secondary text-sm md:text-lg max-w-2xl mx-auto leading-relaxed"
+                >
+                    Setiap gram rempah di GoodRaga dipilih dengan tujuan. Tanpa filler, tanpa pemanis kosong—hanya bahan yang bekerja untuk tubuh.
+                </p>
+            </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow reveal">
-      <h3 class="font-semibold text-lg mb-2">🔄 Konsumsi Fleksibel</h3>
-      <p class="text-sm text-neutral-600">Bisa diminum rutin atau sesuai kebutuhan, tanpa aturan yang ribet.</p>
-    </div>
+            <a
+                href="#content-start"
+                class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 hover:text-white flex flex-col items-center gap-2 transition animate-bounce"
+            >
+                <span class="text-xs uppercase tracking-widest"
+                    >Lihat Selengkapnya</span
+                >
+                <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 14l-7 7-7-7"
+                    ></path>
+                </svg>
+            </a>
+        </section>
 
-  </div>
-</section>
+        <main
+            id="content-start"
+            class="py-24"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24"></div>
+        </main>
 
-<!-- DISCLAIMER -->
-<section class="bg-neutral-100 py-20 reveal">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <p class="text-sm text-neutral-600">
-      Catatan: Manfaat dapat berbeda pada setiap individu. Produk ini bukan pengganti obat medis.
-    </p>
-  </div>
-</section>
+        <footer class="bg-footer text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-start mb-8 lg:mb-12"
+                >
+                    <div class="space-y-4 lg:w-[270px]">
+                        <h3 class="text-lg font-bold">
+                            Good<span class="text-accent-footer">Raga</span>
+                        </h3>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            GoodRaga adalah artisan jamu modern yang berkomitmen
+                            menggunakan 100% rempah asli Indonesia dengan
+                            standar kebersihan tinggi.
+                            <span class="inline lg:hidden"
+                                >Mendefinisikan ulang cara menikmati jamu. Tanpa
+                                rasa pahit, tanpa ribet.</span
+                            >
+                        </p>
+                        <div
+                            class="mt-6 justify-center lg:justify-start flex gap-5 lg:gap-7"
+                        >
+                            <a href="https://wa.me/6285778208790"
+                                ><img
+                                    class="transition-transform duration-150 hover:scale-110"
+                                    src="../src/assets/whatsapp.svg"
+                                    alt="whatsapp logo"
+                            /></a>
+                            <a href="https://www.instagram.com/anandast.05/"
+                                ><img
+                                    class="transition-transform duration-150 hover:scale-110"
+                                    src="../src/assets/instagram.svg"
+                                    alt="instagram logo"
+                            /></a>
+                            <a href=""
+                                ><img
+                                    class="transition-transform duration-150 hover:scale-110"
+                                    src="../src/assets/tiktok.svg"
+                                    alt="tiktok logo"
+                            /></a>
+                        </div>
+                    </div>
 
-<!-- CTA -->
-<section class="py-24 reveal">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Pilih manfaat sesuai kebutuhanmu</h2>
-    <p class="text-neutral-600 mb-8">Setiap tubuh punya ceritanya sendiri.</p>
-    <a href="../index.html#products" class="inline-block bg-emerald-600 text-white px-8 py-4 rounded-xl hover:scale-105 transition">Lihat Produk</a>
-  </div>
-</section>
+                    <div class="">
+                        <h3 class="text-lg font-bold mb-4">
+                            Akses Halaman Utama
+                        </h3>
+                        <ul
+                            class="space-y-1.5 lg:space-y-2.5 text-sm text-secondary"
+                        >
+                            <li class="flex items-center gap-3 group">
+                                <img
+                                    class="transition-transform duration-200 group-hover:translate-x-1"
+                                    src="../src/assets/arrow.svg"
+                                    alt="arrow image"
+                                />
+                                <a href="../index.html#produk">Produk</a>
+                            </li>
+                            <li class="flex items-center gap-3 group">
+                                <img
+                                    class="transition-transform duration-200 group-hover:translate-x-1"
+                                    src="../src/assets/arrow.svg"
+                                    alt="arrow image"
+                                />
+                                <a href="../index.html#cerita">Cerita</a>
+                            </li>
+                            <li class="flex items-center gap-3 group">
+                                <img
+                                    class="transition-transform duration-200 group-hover:translate-x-1"
+                                    src="../src/assets/arrow.svg"
+                                    alt="arrow image"
+                                />
+                                <a href="../index.html#manfaat">Manfaat</a>
+                            </li>
+                            <li class="flex items-center gap-3 group">
+                                <img
+                                    class="transition-transform duration-200 group-hover:translate-x-1"
+                                    src="../src/assets/arrow.svg"
+                                    alt="arrow image"
+                                />
+                                <a href="../index.html#artikel">Artikel</a>
+                            </li>
+                            <li class="flex items-center gap-3 group">
+                                <img
+                                    class="transition-transform duration-200 group-hover:translate-x-1"
+                                    src="../src/assets/arrow.svg"
+                                    alt="arrow image"
+                                />
+                                <a href="../index.html#faq">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
 
-<!-- FOOTER -->
-<footer class="border-t border-neutral-200 py-8 text-center text-sm text-neutral-500">
-  © 2025 RasaRamu. Jamu yang masuk akal.
-</footer>
+                    <div class="">
+                        <h3 class="text-lg font-bold mb-4">Kontak</h3>
+                        <ul class="space-y-3 text-secondary text-sm">
+                            <li class="flex items-center gap-2">
+                                <img
+                                    src="../src/assets/email.svg"
+                                    alt="email icon"
+                                />
+                                halo@goodraga.id
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img
+                                    src="../src/assets/telephone.svg"
+                                    alt="telephone icon"
+                                />
+                                +62 812-3456-7890
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img
+                                    src="../src/assets/location.svg"
+                                    alt="location icon"
+                                />
+                                Kota Tangerang, Indonesia
+                            </li>
+                        </ul>
+                    </div>
 
-<!-- JS -->
-<script>
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('opacity-100','translate-y-0');
-    }
-  });
-},{ threshold: 0.1 });
+                    <div class="w-full lg:w-[300px]">
+                        <h3 class="text-lg font-bold mb-4">
+                            Dapetin Kabar Sehat
+                        </h3>
+                        <p class="text-secondary text-sm mb-4">
+                            Tips kesehatan, update rasa baru, dan promo khusus
+                            member. Nggak bakal nyepam, janji.
+                        </p>
+                        <form id="waForm" class="flex flex-col gap-3">
+                            <textarea
+                                id="waMessage"
+                                type="text"
+                                placeholder="Pesan kamu di sini..."
+                                class="p-2.5 resize-none rounded-lg bg-footer text-secondary placeholder-accent-footer border border-accent-footer focus:outline-none focus:ring-1 focus:ring-accent-footer placeholder:text-sm placeholder:font-light placeholder:opacity-80 text-sm font-light"
+                            ></textarea>
+                            <button
+                                type="submit"
+                                class="py-2.5 bg-accent-footer hover:bg-[#FF9C2E] text-black font-semibold rounded-lg transition shadow-lg"
+                            >
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
 
-reveals.forEach(el => {
-  el.classList.add('opacity-0','translate-y-10','transition','duration-700');
-  observer.observe(el);
-});
-</script>
+                <div
+                    class="border-t border-accent-footer/50 pt-8 text-center text-secondary/50 text-sm"
+                >
+                    <p>
+                        <strong>&copy; 2025 GoodRaga Indonesia.</strong> All
+                        rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
+            <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
+        </div>
+        <script src="../src/js/main.js"></script>
+        <script src="../src/js/manfaat.js"></script>
 
-</body>
+    </body>
 </html>

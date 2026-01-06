@@ -1,26 +1,43 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-    --color-bg: #FAF6F1;
+    --color-bg: #faf6f1;
     --color-primary: #008357;
-    --color-secondary: #ECFDF5;
-    --color-accent: #C1E59F;
-    --color-black: #1F1F1F;
+    --color-secondary: #ecfdf5;
+    --color-accent: #c1e59f;
+    --color-black: #1f1f1f;
     --color-gray: #656565;
     --color-footer: #073827;
-    --color-accent-footer: #FAB66A;
-    
+    --color-accent-footer: #fab66a;
+
     --breakpoint-s: 30rem;
     --breakpoint-xs: 22rem;
 
-    --font-inter: 'Inter', sans-serif;
-    --font-playfair: 'Playfair Display', serif;
-    --font-hand: 'Dancing Script', cursive;
+    --font-inter: "Inter", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-hand: "Dancing Script", cursive;
 
     --animate-fadeIn: fadeIn 0.5s ease-out forwards;
-    
+    --animate-zoomOut: zoomOut 0.8s ease-in-out forwards;
+
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes zoomOut {
+        0% {
+            opacity: 0.7;
+            transform: scale(1.15);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 }

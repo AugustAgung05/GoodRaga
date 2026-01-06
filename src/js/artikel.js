@@ -82,8 +82,8 @@ function generateCardHTML(article, index) {
     const finalImagePath = resolveImagePath(article.image);
 
     return `
-    <article class="break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-gray-100 animate-fadeIn">
-        <div class="relative h-56 overflow-hidden">
+    <article class="break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-gray/10 animate-fadeIn">
+        <div class="relative h-40 xl:h-56 overflow-hidden">
             <img 
                 src="${finalImagePath}" 
                 alt="${article.title}" 
@@ -99,7 +99,7 @@ function generateCardHTML(article, index) {
             </span>
         </div>
         
-        <div class="p-5 flex flex-col grow">
+        <div class="p-4 flex flex-col grow">
             <h4 class="font-bold text-lg leading-snug mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">
                 ${article.title}
             </h4>
@@ -129,7 +129,7 @@ if (journalGrid && filterContainer) {
         filterContainer.innerHTML = categories.map(cat => `
             <button 
                 onclick="filterArticles('${cat}')"
-                class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+                class="px-6 py-2 rounded-full text-xs whitespace-nowrap font-medium transition-all duration-300 ${
                     activeCategory === cat 
                     ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' 
                     : 'bg-gray/10 text-gray border-transparent hover:bg-gray/20'

@@ -236,36 +236,36 @@ function createProductCard(product) {
         <div class="rounded-xl overflow-hidden mb-4 relative shrink-0">
             <img src="${resolveImagePath(product.image)}" alt="${product.name}" class="w-full h-50 xl:h-60 object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
-            <span class="absolute bottom-0 left-0 bg-primary text-xs px-2.5 py-1.5 rounded-tr-lg text-white">Tahan ${product.shelfLife}</span>
+            <span class="absolute bottom-0 left-0 bg-primary text-[10px] px-2.5 py-1.5 rounded-tr-lg text-white">Tahan ${product.shelfLife}</span>
             ${bookmarkBadge}
         </div>
 
         <div class="space-y-5 flex flex-col grow">
             <div class="space-y-2">
-                <h3 class="font-bold text-xl group-hover:text-primary transition">${product.name}</h3>
+                <h3 class="font-bold text-lg xl:text-xl group-hover:text-primary transition">${product.name}</h3>
                 <p class="text-sm text-gray line-clamp-3">${product.desc}</p>
             </div>
             <div class="space-y-2">
-                <h4 class="font-semibold text-lg">Manfaat</h4>
+                <h4 class="font-semibold text-base xl:text-lg">Manfaat</h4>
                 <ul class="list-disc list-inside text-sm text-gray space-y-1">${benefitsList}</ul>
             </div>
             <div class="space-y-2">
-                <h4 class="font-semibold text-lg">Bahan Utama</h4>
+                <h4 class="font-semibold text-base xl:text-lg">Bahan Utama</h4>
                 <ul class="list-disc list-inside text-sm text-gray space-y-1">
                     ${ingredientsList}
                 </ul>
             </div>
             <div class="space-y-2">
-                <h4 class="font-semibold text-lg">Karakter Rasa</h4>
+                <h4 class="font-semibold text-base xl:text-lg">Karakter Rasa</h4>
                 <div class="flex justify-start flex-col xl:flex-row lg:justify-between space-y-1 flex-wrap gap-y-2">${tasteProfileHTML}</div>
             </div>
             <div class="flex justify-between items-center pt-3 border-t border-gray/20">
                 <div class="flex gap-2 items-baseline">
-                    <h3 class="font-bold text-xl"><span class="text-sm">Rp</span> ${formatRupiah(product.price)}</h3>
-                    <span class="text-sm text-gray font-medium">/ ${product.size}</span>
+                    <h3 class="font-bold text-lg xl:text-xl"><span class="text-xs xl:text-sm">Rp</span> ${formatRupiah(product.price)}</h3>
+                    <span class="text-xs xl:text-sm text-gray font-medium">/ ${product.size}</span>
                 </div>
                 <button class="btn-cart p-2.5 rounded-full bg-primary font-semibold hover:bg-emerald-700 transition shadow-md hover:shadow-lg transform active:scale-95">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-5 h-5 fill-current text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="w-4 h-4 xl:w-5 xl:h-5 fill-current text-white">
                         <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/>
                     </svg>
                 </button>
