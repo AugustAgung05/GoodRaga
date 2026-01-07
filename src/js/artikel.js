@@ -535,13 +535,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }).replace(/"/g, "&quot;");
 
                 productWidget.innerHTML = `
-                    <div class="max-w-[400px] bg-white border border-gray/10 rounded-2xl p-6 shadow-lg mx-auto">
+                    <div class="max-w-[400px] bg-white border border-gray/10 rounded-2xl p-6 shadow-lg mx-auto group">
                         <div class="relative rounded-xl overflow-hidden mb-4 bg-gray/10">
                             <img 
                                 src="${prodImgPath}" 
                                 alt="${p.name}" 
-                                class="w-full h-48 s:h-44 md:h-50 xl:h-60 object-cover hover:scale-105 transition duration-500"
+                                class="w-full h-48 s:h-44 md:h-50 xl:h-60 object-cover group-hover:scale-105 transition duration-500"
                             >
+                            <div class="absolute inset-0 md:bg-black/30 group-hover:bg-transparent transition duration-500"></div>
                             <span class="absolute bottom-0 left-0 bg-primary text-[10px] px-2.5 py-1.5 rounded-tr-lg text-white">Tahan ${
                                 p.shelfLife
                             }</span>
@@ -550,7 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </span>
                         </div>
                         
-                        <h3 class="font-bold text-xl mb-1 text-black">${
+                        <h3 class="font-bold text-xl mb-1 text-black group-hover:text-primary transition duration-500">${
                             p.name
                         }</h3>
                         <p class="text-xs text-gray/80 mb-4">${p.desc}</p>
