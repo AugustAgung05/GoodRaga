@@ -178,7 +178,7 @@ if (mainContainer) {
                         alt="${item.name}" 
                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out"
                     >
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
+                    <div class="absolute inset-0 bg-black/10 md:bg-black/20 group-hover:bg-transparent transition duration-500"></div>
                 </div>
 
                 <div class="p-4 flex flex-col">

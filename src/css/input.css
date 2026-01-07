@@ -22,7 +22,7 @@ body {
 }
 
 .anchor-nav {
-    @apply text-xs md:text-sm text-white lg:text-black hover:text-primary;
+    @apply text-xs md:text-sm text-white lg:text-black lg:hover:text-primary;
 }
 
 .hamburger-menu {
@@ -72,6 +72,12 @@ body {
     margin: 0 auto 0.5rem auto !important;
 }
 
+#toast-container > .toast-success {
+    background-size: 18px 18px !important;
+    background-position: 1rem center !important;
+    padding-left: 3rem !important;
+}
+
 @media (max-width: 440px) {
     #toast-container {
         right: 0 !important;
@@ -99,7 +105,7 @@ body {
     }
 
     #toast-container > .toast-success {
-        background-size: 18px 18px !important;
+        background-size: 16px 16px !important;
         background-position: 1rem center !important;
         padding-left: 3rem !important;
     }

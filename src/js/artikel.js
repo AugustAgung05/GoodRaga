@@ -4,7 +4,7 @@ const articles = [
         category: "Tips Sehat",
         date: "10 Jan 2025",
         title: 'Mengenal "Ibu Kunyit" vs Kunyit Biasa',
-        desc: "Apa bedanya, dan kenapa kami memilih biang kunyit untukmu.",
+        desc: "Apa bedanya, dan kenapa kami memilih biang kunyit untukmu? Alasannya lebih dekat dengan kebutuhan tubuh daripada yang kamu bayangkan.",
         image: "./src/assets/tips-sehat-1.webp",
         heroContainer: "../src/assets/hero-tips-sehat-1.webp",
         relatedProduct: {
@@ -130,7 +130,7 @@ const articles = [
         category: "Tips Sehat",
         date: "15 Jan 2025",
         title: "Olahraga Saat PMS: Bolehkah?",
-        desc: "Gerakan ringan yang justru membantu meredakan kram perut.",
+        desc: "Gerakan ringan yang justru membantu meredakan kram perut sering dianggap sepele, padahal dampaknya cukup terasa.",
         image: "./src/assets/tips-sehat-2.webp",
         heroContainer: "../src/assets/hero-tips-sehat-2.webp",
         relatedProduct: {
@@ -170,7 +170,7 @@ const articles = [
         category: "Tips Sehat",
         date: "16 Jan 2025",
         title: "Masuk Angin Karena AC Kantor? Ini Triknya.",
-        desc: "Jangan biarkan suhu dingin menurunkan performa kerjamu.",
+        desc: "Jangan biarkan suhu dingin menurunkan performa kerjamu, karena tanpa disadari kondisi ini bisa memengaruhi fokus, energi, dan ritme aktivitas harian.",
         image: "./src/assets/tips-sehat-3.webp",
         heroContainer: "../src/assets/hero-tips-sehat-3.webp",
         relatedProduct: {
@@ -258,7 +258,7 @@ const articles = [
         category: "Tips Sehat",
         date: "20 Jan 2025",
         title: "Mitos Gula Aren vs Gula Pasir",
-        desc: "Benarkah gula aren lebih sehat untuk diabetes? Cek faktanya di sini.",
+        desc: "Benarkah gula aren lebih sehat untuk diabetes? Jawabannya tidak sesederhana yang sering dibicarakan.",
         image: "./src/assets/tips-sehat-4.webp",
         heroContainer: "../src/assets/hero-tips-sehat-4.webp",
         relatedProduct: {
@@ -299,8 +299,8 @@ const articles = [
         date: "21 Jan 2025",
         title: "Warm Hug: Wedang Jahe Susu Oat",
         desc: "Resep hangat, creamy, dan dairy-free untuk menemani sore hujan tanpa rasa bersalah.",
-        image: "./src/assets/resep-1.webp",
-        heroContainer: "../src/assets/hero-resep-2.webp",
+        image: "./src/assets/resep-2.webp",
+        heroContainer: "../src/assets/hero-resep-1.webp",
         relatedProduct: {
             name: "Wedang Rempah Calm",
             image: "./src/assets/produk.webp",
@@ -403,7 +403,7 @@ function generateCardHTML(article, index) {
     const finalImagePath = resolvePath(article.image);
 
     return `
-    <li class="group block max-w-[450px] mx-auto break-inside-avoid">
+    <li class="group block w-[90%] xs:w-[85%] s:w-[75%] md:w-auto max-w-[400px] md:max-w-[471px] mx-auto break-inside-avoid">
         <a href="${link}" class="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray/10 animate-fadeIn h-full flex flex-col">
             <div class="relative h-40 xl:h-56 overflow-hidden shrink-0">
                 <img 
@@ -415,7 +415,7 @@ function generateCardHTML(article, index) {
                     height="224"
                     class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
                 >
-                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/10 md:from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
                 <span class="absolute bottom-0 left-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-tr-lg uppercase tracking-wider shadow-sm">
                     ${article.category}
                 </span>
@@ -544,7 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }).replace(/"/g, "&quot;");
 
                 productWidget.innerHTML = `
-                    <div class="max-w-[400px] bg-white border border-gray/10 rounded-2xl p-6 shadow-lg mx-auto group">
+                    <div class="max-w-[400px] bg-white border border-gray/10 rounded-2xl p-4 shadow-lg mx-auto group">
                         <div class="relative rounded-xl overflow-hidden mb-4 bg-gray/10">
                             <img 
                                 src="${prodImgPath}" 
@@ -586,7 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             }</span>
                             
                             <button 
-                                onclick="window.addToCart(${productData})"
+                                onclick="window.addToCart(${productData}, true)"
                                 class="text-sm font-semibold text-white bg-primary px-4 py-2 rounded-lg hover:bg-emerald-700 transition shadow-md hover:shadow-lg transform active:scale-95"
                             >
                                 <span class="block xs:hidden">Beli</span>
@@ -611,7 +611,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         const imgPath = resolvePath(a.image);
 
                         return `
-                    <li class="group max-w-[400px] mx-auto">
+                    <li class="group max-w-[400px] md:max-w-full mx-auto md:mx-0">
                         <a href="detail-artikel.html?id=${a.id}" class="flex gap-3">
                             <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-gray-100">
                                 <img 

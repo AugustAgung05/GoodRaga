@@ -250,7 +250,7 @@ function createProductCard(product) {
             <img src="${resolveImagePath(product.image)}" alt="${
         product.name
     }" class="w-full h-40 s:h-44 md:h-50 xl:h-60 object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 md:from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
             <span class="absolute bottom-0 left-0 bg-primary text-[10px] px-2.5 py-1.5 rounded-tr-lg text-white">Tahan ${
                 product.shelfLife
             }</span>

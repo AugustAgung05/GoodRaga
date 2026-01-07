@@ -36,7 +36,7 @@ document.addEventListener("click", function (e) {
     }
 });
 
-window.addToCart = function(product) {
+window.addToCart = function(product, isDirectBuy = false) {
     const existingItem = cart.find((item) => item.name === product.name);
 
     if (existingItem) {
@@ -57,10 +57,12 @@ window.addToCart = function(product) {
         alert("Produk berhasil masuk keranjang!");
     }
     
-    setTimeout(() => {
-        const isInPages = window.location.pathname.includes("/pages/");
-        window.location.href = isInPages ? "keranjang.html" : "./pages/keranjang.html";
-    }, 1500);
+    if (isDirectBuy) {
+        setTimeout(() => {
+            const isInPages = window.location.pathname.includes("/pages/");
+            window.location.href = isInPages ? "keranjang.html" : "./pages/keranjang.html";
+        }, 1500);
+    }
 }
 
 function updateCartBadge() {
