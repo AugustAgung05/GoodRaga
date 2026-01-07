@@ -210,4 +210,4 @@ if (mainContainer) {
         `;
         })
         .join("");
-    }
+}

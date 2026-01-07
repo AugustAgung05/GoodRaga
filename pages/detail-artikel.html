@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Journal — GoodRaga</title>
+        <title id="page-title">Loading... — GoodRaga</title>
         <link rel="icon" href="../public/goodraga-logo.png" type="image/png" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" href="../src/css/output.css" />
     </head>
-    <body class="bg-bg text-black font-inter antialiased">
+    <body class="bg-bg text-black font-inter antialiased header-hidden-init">
         <header
             id="header"
             class="fixed top-0 w-full z-50 transition-all duration-300"
@@ -134,31 +134,172 @@
             </div>
         </header>
 
-        <main id="artikel" class="py-24 reveal opacity-0">
+        <section class="relative inset-0 z-0">
+            <img
+                id="detail-image"
+                src=""
+                alt=""
+                class="w-full h-[300px] object-cover"
+            />
+            <div class="absolute inset-0 bg-black/60"></div>
+        </section>
+        <main class="pt-8 pb-24" id="article-detail-content">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="space-y-4 mb-10 text-center">
-                    <h2
-                        class="text-2xl md:text-3xl xl:text-4xl font-playfair font-bold uppercase leading-relaxed"
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div
+                        class="flex items-center justify-center gap-2 text-xs text-gray mb-4 uppercase tracking-widest font-medium"
                     >
-                        Ruang <span class="text-emerald-800">Hidup Sehat</span>
-                    </h2>
-                    <p class="text-sm lg:text-base leading-relaxed text-gray">
-                        Catatan kecil tentang kesehatan, rempah, dan cara
-                        menikmati hidup yang lebih seimbang.
+                        <span>Oleh Tim GoodRaga</span>
+                        <span class="w-1 h-1 rounded-full bg-gray/50"></span>
+                        <span id="detail-category" class="text-emerald-600"
+                            >Kategori</span
+                        >
+                        <span class="w-1 h-1 rounded-full bg-gray/50"></span>
+                        <span id="detail-date">Tanggal</span>
+                    </div>
+                    <h1
+                        id="detail-title"
+                        class="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight"
+                    >
+                        Loading Title...
+                    </h1>
+                    <p
+                        id="detail-desc"
+                        class="text-lg text-gray-500 leading-relaxed"
+                    >
+                        Loading description...
                     </p>
                 </div>
 
-                <div
-                    class="flex gap-3 overflow-x-auto pb-4 w-full sm:flex-wrap sm:justify-center scrollbar-hide mb-4"
-                    id="filter-container"
-                ></div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-8">
+                        <article
+                            id="detail-body"
+                            class="prose prose-lg prose-emerald text-gray leading-relaxed max-w-none"
+                        ></article>
 
-                <div
-                    id="articles-grid"
-                    class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
-                ></div>
+                        <div
+                            class="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center"
+                        >
+                            <a
+                                href="artikel.html"
+                                class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all"
+                            >
+                                <svg
+                                    class="w-4 h-4 rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    ></path>
+                                </svg>
+                                Kembali ke Journal
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside class="lg:col-span-4 space-y-10">
+                        <div class="sticky top-28 space-y-8">
+                            <div
+                                class="bg-white border border-gray/10 rounded-2xl p-6 shadow-lg"
+                            >
+                                <div
+                                    class="relative rounded-xl overflow-hidden mb-4"
+                                >
+                                    <img
+                                        src="../src/assets/produk.webp"
+                                        alt="Wedang Rempah Calm"
+                                        class="w-full h-48 object-cover"
+                                    />
+                                    <span
+                                        class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded"
+                                    >
+                                        BEST SELLER
+                                    </span>
+                                </div>
+                                <h3 class="font-bold text-xl mb-1">
+                                    Wedang Rempah Calm
+                                </h3>
+                                <p class="text-xs text-gray-400 mb-3">
+                                    Solusi alami untuk tidur lebih nyenyak.
+                                </p>
+
+                                <div
+                                    class="space-y-2 text-sm text-gray-600 mb-4"
+                                >
+                                    <div class="flex items-center gap-2">
+                                        <svg
+                                            class="w-4 h-4 text-emerald-500"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                        <span>Meningkatkan kualitas tidur</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <svg
+                                            class="w-4 h-4 text-emerald-500"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                        <span>Menghangatkan tubuh</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100"
+                                >
+                                    <span
+                                        class="font-bold text-lg text-emerald-800"
+                                        >Rp 18.000</span
+                                    >
+                                    <a
+                                        href="produk.html"
+                                        class="text-sm font-semibold text-white bg-emerald-600 px-4 py-2 rounded-lg hover:bg-emerald-700 transition"
+                                    >
+                                        Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4
+                                    class="font-bold text-lg mb-4 flex items-center gap-2"
+                                >
+                                    Baca Selanjutnya
+                                    <span class="h-px bg-gray-200 grow"></span>
+                                </h4>
+                                <ul
+                                    id="sidebar-articles"
+                                    class="space-y-6"
+                                ></ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </main>
+
         <footer class="bg-footer text-white pt-8 pb-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div
@@ -311,10 +452,14 @@
                 </div>
             </div>
         </footer>
-        <!-- <div class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]">
-            <p class="uppercase text-white font-medium text-xs lg:text-sm">mohon maaf, website ini masih dalam pengembangan</p>
-        </div> -->
-        <script src="../src/js/main.js"></script>
+        <div
+            class="p-5 bg-black text-center fixed bottom-0 w-full z-50 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.4)]"
+        >
+            <p class="uppercase text-white font-medium text-xs lg:text-sm">
+                mohon maaf, website ini masih dalam pengembangan
+            </p>
+        </div>
         <script src="../src/js/artikel.js"></script>
+        <script src="../src/js/main.js"></script>
     </body>
 </html>
