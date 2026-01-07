@@ -75,7 +75,7 @@ function renderCart() {
         container.innerHTML += html;
     });
 
-    subtotalEl.innerHTML = `<span class="text-xs">Rp </span>${totalAmount.toLocaleString(
+    subtotalEl.innerHTML = `<span class="text-[10px]" >Rp </span>${totalAmount.toLocaleString(
         "id-ID"
     )}`;
     totalEl.innerHTML = `<span class="text-sm">Rp </span>${totalAmount.toLocaleString(
