@@ -299,7 +299,7 @@ const articles = [
         date: "21 Jan 2025",
         title: "Warm Hug: Wedang Jahe Susu Oat",
         desc: "Resep hangat, creamy, dan dairy-free untuk menemani sore hujan tanpa rasa bersalah.",
-        image: "./src/assets/resep-2.webp",
+        image: "./src/assets/resep-1.webp",
         heroContainer: "../src/assets/hero-resep-2.webp",
         relatedProduct: {
             name: "Wedang Rempah Calm",
