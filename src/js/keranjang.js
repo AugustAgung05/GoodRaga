@@ -3,9 +3,9 @@ let cart = JSON.parse(localStorage.getItem("goodraga_cart")) || [];
 updateCartBadge();
 
 document.addEventListener("click", function (e) {
-    const button = e.target.closest(".break-inside-avoid.group");
+    const button = e.target.closest(".btn-cart");
 
-    if (button && button.closest(".break-inside-avoid.group")) {
+    if (button && button.closest(".btn-cart")) {
         const card = button.closest(".break-inside-avoid.group");
 
         const name = card.querySelector("h3").innerText;
