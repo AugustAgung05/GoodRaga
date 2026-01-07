@@ -6,6 +6,7 @@ const articles = [
         title: 'Mengenal "Ibu Kunyit" vs Kunyit Biasa',
         desc: "Apa bedanya, dan kenapa kami memilih biang kunyit untukmu.",
         image: "./src/assets/tips-sehat-1.webp",
+        heroContainer: "../src/assets/hero-tips-sehat-1.webp",
         relatedProduct: {
             name: "Kunyit Asam Fresh",
             image: "./src/assets/produk.webp",
@@ -47,6 +48,7 @@ const articles = [
         title: "Kenapa Kamu Masih Merasa Lelah Meski Sudah Tidur 8 Jam?",
         desc: "Kenapa kita sengaja menunda tidur padahal badan sudah lelah? Fenomena ini lebih umum dari yang kamu kira.",
         image: "./src/assets/gaya-hidup-1.webp",
+        heroContainer: "../src/assets/hero-gaya-hidup-1.webp",
         relatedProduct: {
             name: "Wedang Rempah Calm",
             image: "./src/assets/produk.webp",
@@ -89,6 +91,7 @@ const articles = [
         title: 'Teknik "Micro-Break" untuk Atasi Brain Fog Sore Hari',
         desc: "Produktivitas bukan soal kerja nonstop. Pelajari cara 'reset' otak dalam 5 menit.",
         image: "./src/assets/produktivitas-2.webp",
+        heroContainer: "../src/assets/hero-produktivitas-1.webp",
         relatedProduct: {
             name: "Kunyit Asam Fresh",
             image: "./src/assets/produk.webp",
@@ -129,6 +132,7 @@ const articles = [
         title: "Olahraga Saat PMS: Bolehkah?",
         desc: "Gerakan ringan yang justru membantu meredakan kram perut.",
         image: "./src/assets/tips-sehat-2.webp",
+        heroContainer: "../src/assets/hero-tips-sehat-2.webp",
         relatedProduct: {
             name: "Kunyit Asam Fresh",
             image: "./src/assets/produk.webp",
@@ -168,6 +172,7 @@ const articles = [
         title: "Masuk Angin Karena AC Kantor? Ini Triknya.",
         desc: "Jangan biarkan suhu dingin menurunkan performa kerjamu.",
         image: "./src/assets/tips-sehat-3.webp",
+        heroContainer: "../src/assets/hero-tips-sehat-3.webp",
         relatedProduct: {
             name: "Wedang Rempah Calm",
             image: "./src/assets/produk.webp",
@@ -207,6 +212,7 @@ const articles = [
         title: "DIY Mocktail: Kunyit Asam Sparkle",
         desc: "Minuman segar ala café yang bisa kamu buat di rumah—cukup botol GoodRaga dan soda dingin.",
         image: "./src/assets/resep-1.webp",
+        heroContainer: "../src/assets/hero-resep-2.webp",
         relatedProduct: {
             name: "Kunyit Asam Fresh",
             image: "./src/assets/produk.webp",
@@ -254,6 +260,7 @@ const articles = [
         title: "Mitos Gula Aren vs Gula Pasir",
         desc: "Benarkah gula aren lebih sehat untuk diabetes? Cek faktanya di sini.",
         image: "./src/assets/tips-sehat-4.webp",
+        heroContainer: "../src/assets/hero-tips-sehat-4.webp",
         relatedProduct: {
             name: "Wedang Rempah Calm",
             image: "./src/assets/produk.webp",
@@ -293,6 +300,7 @@ const articles = [
         title: "Warm Hug: Wedang Jahe Susu Oat",
         desc: "Resep hangat, creamy, dan dairy-free untuk menemani sore hujan tanpa rasa bersalah.",
         image: "./src/assets/resep-2.webp",
+        heroContainer: "../src/assets/hero-resep-2.webp",
         relatedProduct: {
             name: "Wedang Rempah Calm",
             image: "./src/assets/produk.webp",
@@ -338,6 +346,7 @@ const articles = [
         title: "Ritual 10 Menit Pagi Biar Fokus Seharian",
         desc: "Bukan scroll HP. Mulai hari dengan kebiasaan kecil yang memberi 'win' pertama.",
         image: "./src/assets/produktivitas-1.webp",
+        heroContainer: "../src/assets/hero-produktivitas-2.webp",
         relatedProduct: {
             name: "Kunyit Asam Fresh",
             image: "./src/assets/produk.webp",
@@ -512,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const imgEl = document.getElementById("detail-image");
             if (imgEl) {
-                imgEl.src = resolvePath(currentArticle.image);
+                imgEl.src = currentArticle.heroContainer;
                 imgEl.alt = currentArticle.title;
             }
 
