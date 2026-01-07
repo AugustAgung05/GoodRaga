@@ -199,9 +199,9 @@ function generateDots(score) {
     let dotsHTML = '<div class="flex gap-1">';
     for (let i = 1; i <= 5; i++) {
         if (i <= score) {
-            dotsHTML += '<span class="w-2 h-2 rounded-full bg-primary"></span>';
+            dotsHTML += '<span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-primary"></span>';
         } else {
-            dotsHTML += '<span class="w-2 h-2 rounded-full bg-gray/20"></span>';
+            dotsHTML += '<span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-gray/20"></span>';
         }
     }
     dotsHTML += "</div>";
@@ -227,7 +227,7 @@ function createProductCard(product) {
         .map(
             (taste) => `
         <div class="flex gap-1.5 items-center">
-            <span class="text-sm">${taste.label}</span>
+            <span class="text-xs sm:text-sm">${taste.label}</span>
             ${generateDots(taste.score)}
         </div>
     `
@@ -245,11 +245,11 @@ function createProductCard(product) {
         : "";
 
     return `
-    <div class="break-inside-avoid max-w-[450px] mx-auto lg:mx-0 group relative bg-white border border-gray/10 rounded-2xl p-4 shadow-sm hover:shadow-lg hover:bg-secondary/70 cursor-pointer transition duration-300">
+    <div class="break-inside-avoid w-[90%] xs:w-[85%] s:w-[75%] md:w-auto max-w-[400px] md:max-w-max mx-auto md:mx-0 group relative bg-white border border-gray/10 rounded-2xl p-4 shadow-sm hover:shadow-lg hover:bg-secondary/70 cursor-pointer transition duration-300">
         <div class="rounded-xl overflow-hidden mb-4 relative shrink-0">
             <img src="${resolveImagePath(product.image)}" alt="${
         product.name
-    }" class="w-full h-50 xl:h-60 object-cover group-hover:scale-105 transition duration-500" />
+    }" class="w-full h-40 s:h-44 md:h-50 xl:h-60 object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent hover:from-black/0 transition duration-500"></div>
             <span class="absolute bottom-0 left-0 bg-primary text-[10px] px-2.5 py-1.5 rounded-tr-lg text-white">Tahan ${
                 product.shelfLife
@@ -259,18 +259,18 @@ function createProductCard(product) {
 
         <div class="space-y-5 flex flex-col grow">
             <div class="space-y-2">
-                <h3 class="font-bold text-lg xl:text-xl group-hover:text-primary transition">${
+                <h3 class="font-bold text-base sm:text-lg xl:text-xl group-hover:text-primary transition">${
                     product.name
                 }</h3>
-                <p class="text-sm text-gray line-clamp-3">${product.desc}</p>
+                <p class="text-xs sm:text-sm text-gray line-clamp-3">${product.desc}</p>
             </div>
             <div class="space-y-2">
                 <h4 class="font-semibold text-base xl:text-lg">Manfaat</h4>
-                <ul class="list-disc list-inside text-sm text-gray space-y-1">${benefitsList}</ul>
+                <ul class="list-disc list-inside text-xs sm:text-sm text-gray space-y-1">${benefitsList}</ul>
             </div>
             <div class="space-y-2">
                 <h4 class="font-semibold text-base xl:text-lg">Bahan Utama</h4>
-                <ul class="list-disc list-inside text-sm text-gray space-y-1">
+                <ul class="list-disc list-inside text-xs sm:text-sm text-gray space-y-1">
                     ${ingredientsList}
                 </ul>
             </div>

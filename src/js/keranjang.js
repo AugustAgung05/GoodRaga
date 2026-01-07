@@ -36,19 +36,31 @@ document.addEventListener("click", function (e) {
     }
 });
 
-function addToCart(product) {
+window.addToCart = function(product) {
     const existingItem = cart.find((item) => item.name === product.name);
 
     if (existingItem) {
         existingItem.quantity++;
     } else {
+        if(!product.id) product.id = Date.now();
+        if(!product.quantity) product.quantity = 1;
+        
         cart.push(product);
     }
 
     localStorage.setItem("goodraga_cart", JSON.stringify(cart));
-
     updateCartBadge();
-    toastr.success("Produk berhasil masuk keranjang!");
+    
+    if(typeof toastr !== 'undefined') {
+        toastr.success("Produk berhasil masuk keranjang!");
+    } else {
+        alert("Produk berhasil masuk keranjang!");
+    }
+    
+    setTimeout(() => {
+        const isInPages = window.location.pathname.includes("/pages/");
+        window.location.href = isInPages ? "keranjang.html" : "./pages/keranjang.html";
+    }, 1500);
 }
 
 function updateCartBadge() {

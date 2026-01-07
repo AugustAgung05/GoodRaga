@@ -29,13 +29,13 @@ function renderCart() {
 
         const html = `
                 <div class="flex flex-col sm:flex-row items-center gap-2 *:sm:gap-4 bg-white p-4 rounded-2xl border border-gray/10 shadow-sm transition hover:shadow-md">
-                    <div class="w-full flex justify-between items-center">
-                        <div class="w-14 s:w-16 sm:w-20 h-14 s:h-16 sm:h-20 shrink-0 rounded-xl overflow-hidden">
+                    <div class="w-full flex justify-between gap-4 items-center">
+                        <div class="w-16 s:w-20 sm:w-24 h-16 s:h-20 sm:h-24 shrink-0 rounded-xl overflow-hidden">
                             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
                         </div>
 
                         <div class="flex-grow text-right sm:text-left space-y-1.5">
-                            <h4 class="font-playfair font-bold text-sm s:text-base md:text-lg text-primary">${
+                            <h4 class="font-bold text-[15px] s:text-base md:text-lg text-primary">${
                                 item.name
                             }</h4>
                             <p class="text-xs s:text-sm text-gray/80">Kemasan Botol 250ml</p>
