@@ -18,20 +18,20 @@ body {
 }
 
 .listitem-nav {
-    @apply py-1.5 lg:py-3 px-4;
+    @apply py-2.5 px-4 border-b-2 border-primary/40 lg:border-b-0;
 }
 
 .anchor-nav {
-    @apply text-xs md:text-sm text-white lg:text-black lg:hover:text-primary;
+    @apply text-xs lg:text-sm text-white lg:text-black lg:hover:text-primary;
 }
 
 .hamburger-menu {
-    @apply w-[25px] h-[2px] block bg-black;
+    @apply w-[25px] h-[2px] block bg-emerald-800;
 }
 
 .navbar-fixed {
-    @apply rounded-lg right-5 top-20 w-[250px] p-2 fixed bg-[#353535] duration-300 shadow-[0_0_5px_0_rgba(0,0,0,0.5)];
-    @apply lg:static lg:w-auto lg:p-0 lg:bg-transparent lg:shadow-none lg:rounded-none lg:backdrop-blur-none;
+    @apply rounded-lg right-4 top-20 w-[200px] md:w-[250px] fixed bg-emerald-800 duration-300 shadow-[0_0_5px_0_rgba(0,0,0,0.5)];
+    @apply lg:static lg:w-auto lg:bg-transparent lg:shadow-none lg:rounded-none lg:backdrop-blur-none;
 }
 
 .hamburger-active > span:nth-child(1) {
